@@ -40,19 +40,29 @@ class PumpController extends Controller
         $sensors = Sensor::orderBy('id', 'DESC')->take(30)->get();
         $angles = Angle::orderBy('id', 'DESC')->take(30)->get();
 
+        $sensor_inc = Sensor::orderBy('id', 'DESC')->take(2)->get();
+        $angle_inc = Angle::orderBy('id', 'DESC')->take(2)->get();
+
         $sensor = Sensor::orderBy('id', 'DESC')->first();
         $angle = Angle::orderBy('id', 'DESC')->first();
 
         $data = [
-            'value_ph' => $sensor->value1,
-            'value_ec' => $sensor->value2,
-            'value_level' => $sensor->value3,
+            'value_ph'      => $sensor->value1,
+            'value_ec'      => $sensor->value2,
+            'value_level'   => $sensor->value3,
             'value_voltage' => $sensor->value4,
             'value_current' => $sensor->value5,
-            'value_power' => $sensor->value6,
-            'value_energy' => $sensor->value7,
-            'value_x' => $angle->x_angle,
-            'value_y' => $angle->y_angle,
+            'value_power'   => $sensor->value6,
+            'value_energy'  => $sensor->value7,
+            'value_x'       => $angle->x_angle,
+            'value_y'       => $angle->y_angle,
+
+            'progress_voltage'  => $sensor_inc[0]->value4 - $sensor_inc[1]->value4,
+            'progress_current'  => $sensor_inc[0]->value5 - $sensor_inc[1]->value5,
+            'progress_power'    => $sensor_inc[0]->value6 - $sensor_inc[1]->value6,
+            'progress_energy'   => $sensor_inc[0]->value7 - $sensor_inc[1]->value7,
+            'progress_x'   => $angle_inc[0]->x_angle - $angle_inc[1]->x_angle,
+            'progress_y'   => $angle_inc[0]->y_angle - $angle_inc[1]->y_angle
         ];
         foreach ($sensors as $query) {
             $data['pHValue'][] = $query->value1;

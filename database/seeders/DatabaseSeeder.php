@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Output;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,5 +45,11 @@ class DatabaseSeeder extends Seeder
         $output->gpio   = 17;
         $output->state  = 1;
         $output->save();
+
+        $user = new User;
+        $user->name     = 'Admin';
+        $user->email    = 'smarthydroponictfunas@gmail.com';
+        $user->password = Hash::make('TF2021Hydroponic');
+        $user->save();
     }
 }

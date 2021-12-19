@@ -34,6 +34,16 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
     <div class="container">
       <a class="navbar-brand" href="#">Smart Hidroponik UNAS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
@@ -47,18 +57,6 @@
           <span class="fw-bold">pH : </span>
           <span id="pH">00</span>
         </p>
-        <div class="d-flex justify-content-center">
-          <div class="btn-group" role="group" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" data-aos-offset="0">
-            <form action="/pumpcontrol" method="POST" class="pumpcontrol">
-              @csrf
-              <button type="submit" class="btn <?= $phUp_state->state == 1 ? 'btn-danger' : 'btn-success'; ?>" id="phUp">pH Up</button>
-            </form>
-            <form action="/pumpcontrol" method="post" class="pumpcontrol">
-              @csrf
-              <button type="submit" class="btn <?= $phDown_state->state == 1 ? 'btn-danger' : 'btn-success'; ?>" id="phDown">pH Down</button>
-            </form>
-          </div>
-        </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <canvas id="ECChart" width="400" height="400" data-aos="zoom-in" data-aos-duration="1000"></canvas>
@@ -67,18 +65,6 @@
           <span id="EC">00</span>
           <span>mS/cm</span>
         </p>
-        <div class="d-flex justify-content-center">
-          <div class="btn-group" role="group" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500" data-aos-offset="0">
-            <form action="/pumpcontrol" method="POST" class="pumpcontrol">
-              @csrf
-              <button type="submit" class="btn <?= $nutrisiA_state->state == 1 ? 'btn-danger' : 'btn-success'; ?>" id="nutrisiA">Nutrisi A</button>
-            </form>
-            <form action="/pumpcontrol" method="POST" class="pumpcontrol">
-              @csrf
-              <button type="submit" class="btn <?= $nutrisiB_state->state == 1 ? 'btn-danger' : 'btn-success'; ?>" id="nutrisiB">Nutrisi B</button>
-            </form>
-          </div>
-        </div>
       </div>
       <div class="col-md-6 col-lg-4">
         <canvas id="LevelChart" width="400" height="400" data-aos="zoom-in" data-aos-duration="1000"></canvas>

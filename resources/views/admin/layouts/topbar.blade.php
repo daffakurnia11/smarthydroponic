@@ -8,7 +8,7 @@
         <div class="top-navbar">
           <ul class="navbar-nav align-items-center">
             <li class="nav-item d-none d-md-block">
-              <a class="nav-link" href="https://epwits.com">Main Website</a>
+              <a class="nav-link" href="/">Main Website</a>
             </li>
             <li class="nav-item">
               <form action="/logout" method="POST">
@@ -23,16 +23,13 @@
             <li class="nav-item dropdown dropdown-large">
               <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-bs-toggle="dropdown">
                 <div class="user-setting d-flex align-items-center gap-1">
-                  <img src="/img/profile.svg" class="user-img" alt="">
-                  <div class="user-name d-none d-sm-block">Admin Hydroponic</div>
+                  <div class="user-name d-none d-sm-block ms-3">Admin Hydroponic</div>
                 </div>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                   <a class="dropdown-item" href="#">
                     <div class="d-flex align-items-center">
-                      <img src="/img/profile.svg" alt="" class="rounded-circle" width="60"
-                        height="60">
                       <div class="ms-3">
                         <h6 class="mb-0 dropdown-user-name">Admin Hydroponic</h6>
                         <small class="mb-0 dropdown-user-designation text-secondary">Admin</small>
