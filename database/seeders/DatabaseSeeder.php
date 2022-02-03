@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Output;
 use App\Models\Sensor;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -56,6 +57,7 @@ class DatabaseSeeder extends Seeder
         $sensor->value7 = 0;
         $sensor->value8 = 0;
         $sensor->value9 = 0;
+        $sensor->reading_time = Carbon::now();
         $sensor->save();
         $sensor = new Sensor;
         $sensor->value1 = 0;
@@ -67,6 +69,7 @@ class DatabaseSeeder extends Seeder
         $sensor->value7 = 0;
         $sensor->value8 = 0;
         $sensor->value9 = 0;
+        $sensor->reading_time = Carbon::now();
         $sensor->save();
     }
 }
