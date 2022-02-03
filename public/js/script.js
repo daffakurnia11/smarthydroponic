@@ -100,39 +100,6 @@ $('#nutrisiA').click(function (e) {
   e.preventDefault();
 })
 
-$('#nutrisiB').click(function (e) {
-  if ($(this).hasClass('btn-success')) {
-    $.ajax({
-      url: action,
-      type: 'POST',
-      data: {
-        _token: _token,
-        gpio: 17,
-        state: 1,
-      },
-      success: function (data) {
-        $('#nutrisiB').removeClass('btn-success')
-        $('#nutrisiB').addClass('btn-danger')
-      }
-    })
-  } else {
-    $.ajax({
-      url: action,
-      type: 'POST',
-      data: {
-        _token: _token,
-        gpio: 17,
-        state: 0,
-      },
-      success: function (data) {
-        $('#nutrisiB').removeClass('btn-danger')
-        $('#nutrisiB').addClass('btn-success')
-      }
-    })
-  }
-  e.preventDefault();
-})
-
 var ctx1 = document.getElementById("pHChart");
 const pHChart = new Chart(ctx1, {
   type: 'line',
@@ -360,11 +327,17 @@ const yAxis = new Chart(ctx9, {
   }
 });
 var updateChart = function () {
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   $.ajax({
     url: window.location.origin + '/datacontrol',
     type: 'GET',
     dataType: 'json',
     success: function (data) {
+      console.log(data)
       pHChart.data.labels = data.timeSensor;
       pHChart.data.datasets[0].data = data.pHValue;
       pHChart.update();
@@ -419,41 +392,41 @@ var updateChart = function () {
 updateChart();
 setInterval(() => {
   updateChart();
-}, 500);
+}, 2000);
 
-// var updateData = function (value1, value2, value3, value4, value5, value6, value7, x, y) {
-//   $.ajax({
-//     url: window.location.origin + '/datainsert',
-//     type: 'POST',
-//     data: {
-//       _token: _token,
-//       value1: value1,
-//       value2: value2,
-//       value3: value3,
-//       value4: value4,
-//       value5: value5,
-//       value6: value6,
-//       value7: value7,
-//       x: x,
-//       y: y
-//     },
-//     // success: function (data) {
-//     //   console.log(data);
-//     // }
-//   })
-// }
+var updateData = function (value1, value2, value3, value4, value5, value6, value7, x, y) {
+  $.ajax({
+    url: window.location.origin + '/datainsert',
+    type: 'POST',
+    data: {
+      _token: _token,
+      value1: value1,
+      value2: value2,
+      value3: value3,
+      value4: value4,
+      value5: value5,
+      value6: value6,
+      value7: value7,
+      value8: x,
+      value9: y
+    },
+    // success: function (data) {
+    //   console.log(data);
+    // }
+  })
+}
 
-// let i = 0;
-// setInterval(() => {
-//   var value1 = Math.floor(Math.random() * 100);
-//   var value2 = Math.floor(Math.random() * 100);
-//   var value3 = Math.floor(Math.random() * 100);
-//   var value4 = Math.floor(Math.random() * 100);
-//   var value5 = Math.floor(Math.random() * 100);
-//   var value6 = Math.floor(Math.random() * 100);
-//   var value7 = Math.floor(Math.random() * 100);
+let i = 0;
+setInterval(() => {
+  var value1 = Math.floor(Math.random() * 100);
+  var value2 = Math.floor(Math.random() * 100);
+  var value3 = Math.floor(Math.random() * 100);
+  var value4 = Math.floor(Math.random() * 100);
+  var value5 = Math.floor(Math.random() * 100);
+  var value6 = Math.floor(Math.random() * 100);
+  var value7 = Math.floor(Math.random() * 100);
 
-//   var x = Math.floor(Math.random() * 180);
-//   var y = Math.floor(Math.random() * 180);
-//   updateData(value1, value2, value3, value4, value5, value6, value7, x, y);
-// }, 2000);
+  var x = Math.floor(Math.random() * 180);
+  var y = Math.floor(Math.random() * 180);
+  updateData(value1, value2, value3, value4, value5, value6, value7, x, y);
+}, 2000);

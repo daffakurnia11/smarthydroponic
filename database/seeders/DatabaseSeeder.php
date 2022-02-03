@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Output;
+use App\Models\Sensor;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -39,17 +40,33 @@ class DatabaseSeeder extends Seeder
         $output->state  = 1;
         $output->save();
 
-        $output = new Output;
-        $output->name   = 'Nutrisi B';
-        $output->board  = 1;
-        $output->gpio   = 17;
-        $output->state  = 1;
-        $output->save();
-
         $user = new User;
         $user->name     = 'Admin';
         $user->email    = 'smarthydroponictfunas@gmail.com';
         $user->password = Hash::make('TF2021Hydroponic');
         $user->save();
+
+        $sensor = new Sensor;
+        $sensor->value1 = 0;
+        $sensor->value2 = 0;
+        $sensor->value3 = 0;
+        $sensor->value4 = 0;
+        $sensor->value5 = 0;
+        $sensor->value6 = 0;
+        $sensor->value7 = 0;
+        $sensor->value8 = 0;
+        $sensor->value9 = 0;
+        $sensor->save();
+        $sensor = new Sensor;
+        $sensor->value1 = 0;
+        $sensor->value2 = 0;
+        $sensor->value3 = 0;
+        $sensor->value4 = 0;
+        $sensor->value5 = 0;
+        $sensor->value6 = 0;
+        $sensor->value7 = 0;
+        $sensor->value8 = 0;
+        $sensor->value9 = 0;
+        $sensor->save();
     }
 }

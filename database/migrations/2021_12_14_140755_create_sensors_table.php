@@ -22,6 +22,8 @@ class CreateSensorsTable extends Migration
             $table->string('value5', 30)->nullable();
             $table->string('value6', 30)->nullable();
             $table->string('value7', 30)->nullable();
+            $table->string('value8', 30)->nullable();
+            $table->string('value9', 30)->nullable();
             $table->timestamp('reading_time');
             $table->timestamps();
         });

@@ -324,7 +324,7 @@
       updateChart();
       setInterval(() => {
         updateChart();
-      }, 500);
+      }, 2000);
       });
   </script>
   

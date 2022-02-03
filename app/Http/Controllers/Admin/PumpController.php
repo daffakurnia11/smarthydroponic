@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Angle;
 use App\Models\Output;
 use App\Models\Sensor;
 use Illuminate\Http\Request;
@@ -27,24 +26,17 @@ class PumpController extends Controller
             'value5' => $request->value5,
             'value6' => $request->value6,
             'value7' => $request->value7,
-        ]);
-
-        Angle::insert([
-            'x_angle' => $request->x,
-            'y_angle' => $request->y,
+            'value8' => $request->value8,
+            'value9' => $request->value9,
         ]);
     }
 
     public function datacontrol()
     {
         $sensors = Sensor::orderBy('id', 'DESC')->take(30)->get();
-        $angles = Angle::orderBy('id', 'DESC')->take(30)->get();
-
         $sensor_inc = Sensor::orderBy('id', 'DESC')->take(2)->get();
-        $angle_inc = Angle::orderBy('id', 'DESC')->take(2)->get();
-
         $sensor = Sensor::orderBy('id', 'DESC')->first();
-        $angle = Angle::orderBy('id', 'DESC')->first();
+
 
         $data = [
             'value_ph'      => $sensor->value1,
@@ -54,15 +46,15 @@ class PumpController extends Controller
             'value_current' => $sensor->value5,
             'value_power'   => $sensor->value6,
             'value_energy'  => $sensor->value7,
-            'value_x'       => $angle->x_angle,
-            'value_y'       => $angle->y_angle,
+            'value_x'       => $sensor->value8,
+            'value_y'       => $sensor->value9,
 
-            'progress_voltage'  => $sensor_inc[0]->value4 - $sensor_inc[1]->value4,
-            'progress_current'  => $sensor_inc[0]->value5 - $sensor_inc[1]->value5,
-            'progress_power'    => $sensor_inc[0]->value6 - $sensor_inc[1]->value6,
-            'progress_energy'   => $sensor_inc[0]->value7 - $sensor_inc[1]->value7,
-            'progress_x'   => $angle_inc[0]->x_angle - $angle_inc[1]->x_angle,
-            'progress_y'   => $angle_inc[0]->y_angle - $angle_inc[1]->y_angle
+            'progress_voltage'  => ($sensor_inc[0]->value4 - $sensor_inc[1]->value4),
+            'progress_current'  => ($sensor_inc[0]->value5 - $sensor_inc[1]->value5),
+            'progress_power'    => ($sensor_inc[0]->value6 - $sensor_inc[1]->value6),
+            'progress_energy'   => ($sensor_inc[0]->value7 - $sensor_inc[1]->value7),
+            'progress_x'   => ($sensor_inc[0]->value8 - $sensor_inc[1]->value8),
+            'progress_y'   => ($sensor_inc[0]->value9 - $sensor_inc[1]->value9)
         ];
         foreach ($sensors as $query) {
             $data['pHValue'][] = $query->value1;
@@ -73,10 +65,8 @@ class PumpController extends Controller
             $data['PowerValue'][] = $query->value6;
             $data['EnergyValue'][] = $query->value7;
             $data['timeSensor'][] = $query->reading_time;
-        }
-        foreach ($angles as $query) {
-            $data['xValue'][] = $query->x_angle;
-            $data['yValue'][] = $query->y_angle;
+            $data['xValue'][] = $query->value8;
+            $data['yValue'][] = $query->value9;
             $data['timeAngle'][] = $query->reading_time;
         }
         return json_encode($data);
