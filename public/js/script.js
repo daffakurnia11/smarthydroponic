@@ -416,17 +416,17 @@ var updateData = function (value1, value2, value3, value4, value5, value6, value
   })
 }
 
-let i = 0;
-setInterval(() => {
-  var value1 = Math.floor(Math.random() * 100);
-  var value2 = Math.floor(Math.random() * 100);
-  var value3 = Math.floor(Math.random() * 100);
-  var value4 = Math.floor(Math.random() * 100);
-  var value5 = Math.floor(Math.random() * 100);
-  var value6 = Math.floor(Math.random() * 100);
-  var value7 = Math.floor(Math.random() * 100);
+// let i = 0;
+// setInterval(() => {
+//   var value1 = Math.floor(Math.random() * 100);
+//   var value2 = Math.floor(Math.random() * 100);
+//   var value3 = Math.floor(Math.random() * 100);
+//   var value4 = Math.floor(Math.random() * 100);
+//   var value5 = Math.floor(Math.random() * 100);
+//   var value6 = Math.floor(Math.random() * 100);
+//   var value7 = Math.floor(Math.random() * 100);
 
-  var x = Math.floor(Math.random() * 180);
-  var y = Math.floor(Math.random() * 180);
-  updateData(value1, value2, value3, value4, value5, value6, value7, x, y);
-}, 2000);
+//   var x = Math.floor(Math.random() * 180);
+//   var y = Math.floor(Math.random() * 180);
+//   updateData(value1, value2, value3, value4, value5, value6, value7, x, y);
+// }, 2000);
