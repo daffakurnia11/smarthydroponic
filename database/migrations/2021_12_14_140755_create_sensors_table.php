@@ -22,7 +22,7 @@ class CreateSensorsTable extends Migration
             $table->string('value5', 30)->default(0);
             $table->string('value6', 30)->default(0);
             $table->string('value7', 30)->default(0);
-            $table->timestamp('reading_time')->nullable();
+            $table->timestamp('reading_time')->useCurrent();
             $table->timestamps();
             $table->string('value8', 30)->default(0);
             $table->string('value9', 30)->default(0);
