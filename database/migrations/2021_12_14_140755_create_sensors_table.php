@@ -15,17 +15,17 @@ class CreateSensorsTable extends Migration
     {
         Schema::create('sensors', function (Blueprint $table) {
             $table->id();
-            $table->string('value1', 10)->nullable();
-            $table->string('value2', 10)->nullable();
-            $table->string('value3', 10)->nullable();
-            $table->string('value4', 30)->nullable();
-            $table->string('value5', 30)->nullable();
-            $table->string('value6', 30)->nullable();
-            $table->string('value7', 30)->nullable();
-            $table->string('value8', 30)->nullable();
-            $table->string('value9', 30)->nullable();
+            $table->string('value1', 10)->default(0);
+            $table->string('value2', 10)->default(0);
+            $table->string('value3', 10)->default(0);
+            $table->string('value4', 30)->default(0);
+            $table->string('value5', 30)->default(0);
+            $table->string('value6', 30)->default(0);
+            $table->string('value7', 30)->default(0);
             $table->timestamp('reading_time');
             $table->timestamps();
+            $table->string('value8', 30)->default(0);
+            $table->string('value9', 30)->default(0);
         });
     }
 
