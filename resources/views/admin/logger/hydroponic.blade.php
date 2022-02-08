@@ -56,7 +56,8 @@
                   <th>No.</th>
                   <th>Reading Time</th>
                   <th>pH</th>
-                  <th>EC</th>
+                  <th>EC (ppm)</th>
+                  <th>EC (mS/cm)</th>
                   <th>Level</th>
                 </tr>
               </thead>
@@ -66,7 +67,8 @@
                     <td class="text-center">{{ $loop->iteration }}</td>
                     <td class="text-center">{{ $data->reading_time }}</td>
                     <td class="text-center">{{ $data->value1 }}</td>
-                    <td class="text-center">{{ $data->value2 }} ms/cm</td>
+                    <td class="text-center">{{ $data->value2 }}</td>
+                    <td class="text-center">{{ $data->value2 * 1.56 }}</td>
                     <td class="text-center">{{ $data->value3 }} cm</td>
                   </tr>
                 @endforeach
@@ -76,7 +78,8 @@
                   <th>No.</th>
                   <th>Reading Time</th>
                   <th>pH</th>
-                  <th>EC</th>
+                  <th>EC (ppm)</th>
+                  <th>EC (mS/cm)</th>
                   <th>Level</th>
                 </tr>
               </tfoot>

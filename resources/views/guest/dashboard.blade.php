@@ -63,7 +63,7 @@
         <p class="text-center mt-3" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="250" data-aos-offset="0">
           <span class="fw-bold">EC : </span>
           <span id="EC">00</span>
-          <span>mS/cm</span>
+          <span>ppm</span>
         </p>
       </div>
       <div class="col-md-6 col-lg-4">

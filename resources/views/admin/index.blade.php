@@ -36,7 +36,7 @@
           <p>EC Graph</p>
           <h2 class="text-center fw-light">
             <span id="ECValue"></span>
-            <span class="h5">mS/cm</span>
+            <span class="h5">ppm</span>
           </h2>
           <div id="ECOverview"></div>
         </div>

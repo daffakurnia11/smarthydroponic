@@ -54,7 +54,7 @@
         <p class="text-center mb-0">
           <span class="fw-bold">EC : </span>
           <span id="EC">00</span>
-          <span>mS/cm</span>
+          <span>ppm</span>
         </p>
       </h6>
       <hr/>
