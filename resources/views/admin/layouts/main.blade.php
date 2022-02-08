@@ -76,15 +76,15 @@
   {{-- Data Tables --}}
   <script src="/vendor/datatable/js/jquery.dataTables.min.js"></script>
   <script src="/vendor/datatable/js/dataTables.bootstrap5.min.js"></script>
-  {{-- <script src="/js/table-datatable.js"></script> --}}
+  <script src="/js/table-datatable.js?modify={{ date('Ymd') }}"></script>
   {{-- Datepicker --}}
 	<script src="/vendor/bootstrap-material-datetimepicker/js/moment.min.js"></script>
 	<script src="/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.min.js"></script>
   {{-- Summernote --}}
   <script src="/vendor/summernote/summernote.min.js"></script>
   <!--app-->
-  <script src="/js/app.js"></script>
-  <script src="/js/script.js"></script>
+  <script src="/js/app.js?modify={{ date('Ymd') }}"></script>
+  <script src="/js/script.js?modify={{ date('Ymd') }}"></script>
 
 </body>
 

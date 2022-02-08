@@ -1,6 +1,16 @@
 const action = $('.pumpcontrol').attr('action');
 var _token = $('meta[name=csrf-token]').attr('content');
 
+$(function () {
+  "use strict";
+  $('#fromTime').bootstrapMaterialDatePicker({
+    format: 'YYYY-MM-DD HH:mm'
+  });
+  $('#untilTime').bootstrapMaterialDatePicker({
+    format: 'YYYY-MM-DD HH:mm'
+  });
+});
+
 $('#phUp').click(function (e) {
   if ($("#phUp").hasClass('btn-success')) {
     $.ajax({

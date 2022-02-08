@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\PumpController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\LoggerController;
+use App\Http\Controllers\Logger\HydroponicController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -34,6 +36,10 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/monitoring')->group(function () {
       Route::get('/hydroponic', [AdminController::class, 'hydroponic']);
       Route::get('/solar-tracker', [AdminController::class, 'solar_tracker']);
+    });
+    Route::prefix('/log')->group(function () {
+      Route::get('/hydroponic', [LoggerController::class, 'hydroponic']);
+      Route::get('/solar-tracker', [LoggerController::class, 'solar_tracker']);
     });
   });
 });
