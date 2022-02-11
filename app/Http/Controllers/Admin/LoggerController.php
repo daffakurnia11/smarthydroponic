@@ -18,6 +18,7 @@ class LoggerController extends Controller
         ];
 
         return view('admin.logger.hydroponic', [
+            'title' => 'Data Logger Hydroponic',
             'datas' => Sensor::whereBetween('reading_time', [$validated['from'], $validated['to']])->get(),
             'from'  => $validated['from'],
             'to'    => $validated['to']
@@ -33,6 +34,7 @@ class LoggerController extends Controller
         ];
 
         return view('admin.logger.solar-tracker', [
+            'title' => 'Data Logger Solar Tracker',
             'datas' => Sensor::whereBetween('reading_time', [$validated['from'], $validated['to']])->get(),
             'from'  => $validated['from'],
             'to'    => $validated['to']

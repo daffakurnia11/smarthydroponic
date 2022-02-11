@@ -41,21 +41,26 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.index');
+        return view('admin.index', [
+            'title'     => 'Dashboard Controll'
+        ]);
     }
 
     public function hydroponic()
     {
         return view('admin.monitoring.hydroponic', [
-            'phUp_state'  => Output::firstWhere('name', 'ph Up'),
-            'phDown_state'  => Output::firstWhere('name', 'ph Down'),
-            'nutrisiA_state'  => Output::firstWhere('name', 'Nutrisi A'),
-            'nutrisiB_state'  => Output::firstWhere('name', 'Nutrisi B'),
+            'title'             => 'Monitoring Hydroponic',
+            'phUp_state'        => Output::firstWhere('name', 'ph Up'),
+            'phDown_state'      => Output::firstWhere('name', 'ph Down'),
+            'nutrisiA_state'    => Output::firstWhere('name', 'Nutrisi A'),
+            'nutrisiB_state'    => Output::firstWhere('name', 'Nutrisi B'),
         ]);
     }
 
     public function solar_tracker()
     {
-        return view('admin.monitoring.solar-tracker');
+        return view('admin.monitoring.solar-tracker', [
+            'title'             => 'Monitoring Solar Tracker',
+        ]);
     }
 }
