@@ -22,7 +22,7 @@
       <h6 class="mb-0 text-uppercase d-flex justify-content-between">
         Voltage Monitoring
         <p class="text-center mb-0">
-          <span class="fw-bold">pH : </span>
+          <span class="fw-bold">Voltage : </span>
           <span id="Voltage">00</span>
           <span>V</span>
         </p>
@@ -39,7 +39,7 @@
       <h6 class="mb-0 text-uppercase d-flex justify-content-between">  
         Current Monitoring
         <p class="text-center mb-0">
-          <span class="fw-bold">EC : </span>
+          <span class="fw-bold">Current : </span>
           <span id="Current">00</span>
           <span>A</span>
         </p>
@@ -56,7 +56,7 @@
       <h6 class="mb-0 text-uppercase d-flex justify-content-between">
         Power Monitoring
         <p class="text-center mb-0">
-          <span class="fw-bold">Level : </span>
+          <span class="fw-bold">Power : </span>
           <span id="Power">00</span>
           <span>Watt</span>
         </p>
@@ -73,7 +73,7 @@
       <h6 class="mb-0 text-uppercase d-flex justify-content-between">
         Energy Monitoring
         <p class="text-center mb-0">
-          <span class="fw-bold">pH : </span>
+          <span class="fw-bold">Energy : </span>
           <span id="Energy">00</span>
           <span>Wh</span>
         </p>
@@ -90,7 +90,7 @@
       <h6 class="mb-0 text-uppercase d-flex justify-content-between">  
         X-axis Monitoring
         <p class="text-center mb-0">
-          <span class="fw-bold">EC : </span>
+          <span class="fw-bold">X-axis : </span>
           <span id="xAngle">00</span>
           <span>deg</span>
         </p>
@@ -107,7 +107,7 @@
       <h6 class="mb-0 text-uppercase d-flex justify-content-between">
         Y-axis Monitoring
         <p class="text-center mb-0">
-          <span class="fw-bold">Level : </span>
+          <span class="fw-bold">Y-axis : </span>
           <span id="yAngle">00</span>
           <span>deg</span>
         </p>
