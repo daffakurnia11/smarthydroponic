@@ -18,7 +18,7 @@ $('#phUp').click(function (e) {
       type: 'POST',
       data: {
         _token: _token,
-        gpio: 5,
+        gpio: 18,
         state: 1,
       },
       success: function () {
@@ -32,7 +32,7 @@ $('#phUp').click(function (e) {
       type: 'POST',
       data: {
         _token: _token,
-        gpio: 5,
+        gpio: 18,
         state: 0,
       },
       success: function () {
@@ -51,7 +51,7 @@ $('#phDown').click(function (e) {
       type: 'POST',
       data: {
         _token: _token,
-        gpio: 16,
+        gpio: 15,
         state: 1,
       },
       success: function (data) {
@@ -65,7 +65,7 @@ $('#phDown').click(function (e) {
       type: 'POST',
       data: {
         _token: _token,
-        gpio: 16,
+        gpio: 15,
         state: 0,
       },
       success: function (data) {
@@ -84,7 +84,7 @@ $('#nutrisiA').click(function (e) {
       type: 'POST',
       data: {
         _token: _token,
-        gpio: 15,
+        gpio: 19,
         state: 1,
       },
       success: function (data) {
@@ -98,7 +98,7 @@ $('#nutrisiA').click(function (e) {
       type: 'POST',
       data: {
         _token: _token,
-        gpio: 15,
+        gpio: 19,
         state: 0,
       },
       success: function (data) {

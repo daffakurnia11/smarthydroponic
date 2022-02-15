@@ -70,7 +70,7 @@
           <div class="d-flex justify-content-center">
             <form action="/pumpcontrol" method="POST" class="pumpcontrol">
               @csrf
-              <button type="submit" class="btn px-5 radius-30 mx-2 <?= $nutrisiA_state->state == 1 ? 'btn-danger' : 'btn-success'; ?>" id="nutrisiA">Nutrisi A</button>
+              <button type="submit" class="btn px-5 radius-30 mx-2 <?= $nutrisi_state->state == 1 ? 'btn-danger' : 'btn-success'; ?>" id="nutrisiA">Nutrisi</button>
             </form>
           </div>
         </div>

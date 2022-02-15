@@ -52,8 +52,7 @@ class AdminController extends Controller
             'title'             => 'Monitoring Hydroponic',
             'phUp_state'        => Output::firstWhere('name', 'ph Up'),
             'phDown_state'      => Output::firstWhere('name', 'ph Down'),
-            'nutrisiA_state'    => Output::firstWhere('name', 'Nutrisi A'),
-            'nutrisiB_state'    => Output::firstWhere('name', 'Nutrisi B'),
+            'nutrisi_state'     => Output::firstWhere('name', 'Nutrisi'),
         ]);
     }
 
