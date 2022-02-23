@@ -42,7 +42,7 @@
     {{-- Data Logger --}}
     <li class="menu-label mt-0">Data Logger</li>
     <li class="{{ Request::is('admin/log/hydroponic') ? 'mm-active' : '' }}">
-      <a href="/admin/log/hydroponic?from={{ \Carbon\Carbon::now()->subHours(5) }}&to={{ \Carbon\Carbon::now() }}">
+      <a href="/admin/log/hydroponic?from={{ \Carbon\Carbon::now()->subHours(2) }}&to={{ \Carbon\Carbon::now() }}">
         <div class="parent-icon">
           <i class="bi bi-clipboard-data"></i>
         </div>
@@ -50,7 +50,7 @@
       </a>
     </li>
     <li class="{{ Request::is('admin/log/solar-tracker') ? 'mm-active' : '' }}">
-      <a href="/admin/log/solar-tracker?from={{ \Carbon\Carbon::now()->subHours(5) }}&to={{ \Carbon\Carbon::now() }}">
+      <a href="/admin/log/solar-tracker?from={{ \Carbon\Carbon::now()->subHours(2) }}&to={{ \Carbon\Carbon::now() }}">
         <div class="parent-icon">
           <i class="bi bi-file-earmark-bar-graph"></i>
         </div>
