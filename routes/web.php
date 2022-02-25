@@ -1,11 +1,15 @@
 <?php
 
+use App\Exports\SensorExport;
+use App\Exports\UsersExport;
 use App\Http\Controllers\Admin\PumpController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Admin\LoggerController;
 use App\Http\Controllers\Logger\HydroponicController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +44,14 @@ Route::middleware('auth')->group(function () {
     Route::prefix('/log')->group(function () {
       Route::get('/hydroponic', [LoggerController::class, 'hydroponic']);
       Route::get('/solar-tracker', [LoggerController::class, 'solar_tracker']);
+    });
+    Route::prefix('/export')->group(function () {
+      Route::get('/hydroponic', [ExportController::class, 'hydroponic']);
+      Route::get('/solar-tracker', [ExportController::class, 'solar_tracker']);
+    });
+    Route::prefix('/export-all')->group(function () {
+      Route::get('/hydroponic', [ExportController::class, 'all_hydroponic']);
+      Route::get('/solar-tracker', [ExportController::class, 'all_solar_tracker']);
     });
   });
 });

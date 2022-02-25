@@ -10,4 +10,13 @@ if (flashdata) {
       confirmButtonColor: '#c6384d',
     })
   }
+  // No Data
+  if (flashdata == 'No Data') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Data Kosong!',
+      text: 'Silakan atur waktu filter dahulu.',
+      confirmButtonColor: '#c6384d',
+    })
+  }
 }

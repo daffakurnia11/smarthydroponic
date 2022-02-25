@@ -2,13 +2,11 @@
 
 @section('container')
   <!--Header-->
-  <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-    <div class="breadcrumb-title pe-3">Hallo, {{ auth()->user()->name }}</div>
-    <div class="ps-3 ms-auto">
+  <div class="page-breadcrumb d-flex flex-column flex-md-row align-items-center mb-3">
+    <div class="breadcrumb-title pe-md-3">Hallo, {{ auth()->user()->name }}</div>
+    <div class="ps-md-3 ms-md-auto mx-auto mx-md-0 mt-3 mt-md-0">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0 p-0">
-          {{-- <li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-          </li> --}}
           <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
         </ol>
       </nav>

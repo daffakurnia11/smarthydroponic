@@ -85,6 +85,7 @@
   <!--app-->
   <script src="/js/app.js?modify={{ date('Ymd') }}"></script>
   <script src="/js/script.js?modify={{ date('Ymd') }}"></script>
+  <script src="/js/notif.js?modify={{ date('Ymd') }}"></script>
 
 </body>
 
