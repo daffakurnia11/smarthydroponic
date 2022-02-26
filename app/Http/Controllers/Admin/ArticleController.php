@@ -77,7 +77,10 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        $article->update([
+            'reader' => $article->reader + 1
+        ]);
+        return redirect("/files/article/paper/$article->paper");
     }
 
     /**

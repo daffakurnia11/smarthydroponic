@@ -1,0 +1,26 @@
+nav.navbar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 0;
+  .navbar {
+    &-brand {
+      font: bold 14px/15px $font-archivo;
+      text-transform: uppercase;
+      color: $color-white;
+    }
+    &-nav {
+      .nav-link {
+        font: 200 14px/15px $font-archivo;
+        text-transform: uppercase;
+        color: $color-white;
+        margin: auto 15px;
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

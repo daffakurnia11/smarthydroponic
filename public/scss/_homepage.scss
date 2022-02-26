@@ -1,0 +1,286 @@
+body {
+    background-color: #f7fff5;
+    position: relative;
+}
+
+.jumbotron1 {
+    background: url("../img/background-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0;
+    min-height: 100vh;
+    align-items: center;
+    background-attachment: fixed;
+    &-header {
+        font: bold 55px/70px $fonts-family;
+        text-transform: uppercase;
+        color: $color-white;
+        @media screen and (max-width: 768px) {
+            font-size: 35px;
+            line-height: 45px;
+        }
+    }
+    &-lead {
+        color: $color-white;
+        font: normal 25px/33px $fonts-family;
+        @media screen and (max-width: 576px) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+    &-button {
+        border: 2px solid $color-white;
+        display: inline-block;
+        box-sizing: border-box;
+        border-radius: 27.5px;
+        background-color: transparent;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: $color-white;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        &:hover {
+            color: $color-white;
+            text-decoration: none;
+        }
+    }
+}
+
+#home {
+    margin-bottom: 45px;
+    .swiper {
+        &-button-prev {
+            font-size: 2rem;
+            color: #59884e;
+            &::after {
+                content: "";
+            }
+        }
+        &-button-next {
+            font-size: 2rem;
+            color: #59884e;
+            &::after {
+                content: "";
+            }
+        }
+    }
+}
+
+#home .col-md-6 {
+    .paragraf {
+        text-align: justify;
+        margin: 20px 0 0 0;
+        font: normal 18px/25px $fonts-family;
+        @media screen and (max-width: 576px) {
+            font-size: 14px;
+            line-height: 19px;
+            margin: 20px 0 0 0;
+        }
+    }
+    .judul-bagian2 {
+        margin: 20px 0 0 0;
+        font: normal 36px/42px $fonts-family;
+        @media screen and (max-width: 576px) {
+            font-size: 26px;
+            line-height: 36px;
+            margin: 20px 0 0 0;
+        }
+    }
+    .gambar-bagian2 {
+        display: block;
+        width: 506px;
+        box-sizing: border-box;
+        max-width: 100%;
+        margin: auto;
+    }
+}
+
+#home {
+    .swiper-button {
+        border: 2px solid #59884e;
+        box-sizing: border-box;
+        color: #59884e;
+        background-color: #f7fff5;
+        border-radius: 50px;
+        font: bold 18px/21px $fonts-family;
+        text-align: center;
+        padding: 11px 30px;
+        margin: 10px 15px;
+        cursor: default;
+        @media screen and (max-width: 576px) {
+            font-size: 14px;
+        }
+        &.active {
+            background-color: #59884e;
+            color: #f7fff5;
+        }
+    }
+}
+
+#plants {
+    background-color: #59884e;
+    background-size: cover;
+    background-position: 0;
+    padding: 73px 0 10px;
+    .plants-title {
+        color: $color-white;
+        font: bold 72px/85px $fonts-family;
+        width: fit-content;
+        font-size: 46px;
+        line-height: 60px;
+        &::after {
+            display: block;
+            content: "";
+            width: 80%;
+            height: 2px;
+            background-color: #f7fff5;
+            margin-top: 28px;
+            margin-bottom: 73px;
+        }
+    }
+    .cards {
+        .gambar-tanaman {
+            width: 100%;
+            display: block;
+            margin: auto;
+        }
+        .table {
+            color: $color-white;
+            th {
+                font: bold 14px/16px $fonts-family;
+                text-align: justify;
+                letter-spacing: 0.04em;
+                border-bottom: 1px solid;
+                padding: 30px 0 10px;
+            }
+            .rincian-tanaman {
+                .penjelasan {
+                    font: normal 14px/16px $fonts-family;
+                    font-family: Raleway;
+                    text-align: justify;
+                    letter-spacing: 0.04em;
+                    color: #f7fff5;
+                }
+                .titik {
+                    position: relative;
+                    top: 50%;
+                    content: "";
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 5px;
+                    background-color: #f7fff5;
+                    box-sizing: border-box;
+                    transform: translateY(-25%);
+                    display: block;
+                }
+                .gambar-bagian3 {
+                    width: 25px;
+                    display: block;
+                    padding-right: 10px;
+                }
+                .bi-clock {
+                    display: block;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+    .plants-button {
+        border: 2px solid $color-white;
+        display: block;
+        box-sizing: border-box;
+        color: #59884e;
+        width: 237px;
+        height: 45px;
+        background-color: #f7fff5;
+        border-radius: 22.5px;
+        font: bold 16px/19px $fonts-family;
+        text-align: center;
+        margin-top: 39px;
+        margin-bottom: 58px;
+    }
+}
+
+#artikel {
+    .artikel-title {
+        font: bold 48px/56px $fonts-family;
+        text-align: center;
+        padding-top: 61px;
+        padding-bottom: 53px;
+    }
+    .cards-artikel {
+        .artikel-header {
+            font: normal 18px/21px $fonts-family;
+            font-weight: 500;
+            color: #000000;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+            text-align: center;
+            min-height: 42px;
+            &::before {
+                display: block;
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: #000000;
+                margin-bottom: 10px;
+                max-width: 100%;
+            }
+        }
+        .image-container {
+            width: 100%;
+            height: 250px;
+            .artikel-image {
+                display: block;
+                margin: auto;
+                max-width: 100%;
+                max-height: 100%;
+                padding: 0 5px;
+            }
+        }
+        .artikel-paragraf {
+            font: normal 14px/16px $fonts-family;
+            text-align: justify;
+            letter-spacing: 0.04em;
+            margin-top: 39px;
+            margin-bottom: 26px;
+        }
+    }
+    .artikel-button {
+        border: 2px solid #232721;
+        display: block;
+        box-sizing: border-box;
+        border-radius: 27.5px;
+        background-color: transparent;
+        text-decoration: none;
+        color: #232721;
+        width: 379px;
+        max-width: 100%;
+        padding: 0.75rem 0;
+        border-radius: 22.5px;
+        font: bold 16px/19px $fonts-family;
+        text-align: center;
+        margin-bottom: 127px;
+        margin-top: 26px;
+    }
+}
+
+.footer {
+    background-color: #59884e;
+    text-align: end;
+    width: 100%;
+    height: 131px;
+    &-rincian {
+        font: bold 24px/28px $fonts-family;
+        text-align: right;
+        text-decoration: none;
+        color: #f7fff5;
+        &:hover {
+            text-decoration: none;
+            color: #f7fff5;
+        }
+        @media screen and (max-width: 576px) {
+            font-size: 16px;
+        }
+    }
+}

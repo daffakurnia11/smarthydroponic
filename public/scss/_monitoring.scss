@@ -1,0 +1,46 @@
+header#monitoring {
+  min-height: 100vh;
+  background-image: url(../img/monitoring-header-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  .header {
+    &-title {
+      font: bold 64px/75px $font-raleway;
+      text-transform: uppercase;
+      color: $color-white;
+      @media screen and (max-width: 576px) {
+        font-size: 40px;
+        line-height: 48px;
+      }
+    }
+    &-desc {
+      font: normal 28px/33px $font-raleway;
+      color: $color-white;
+      @media screen and (max-width: 576px) {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+#hydroponic {
+  background-color: $color-lightgreen;
+}
+
+.monitoring-container {
+  background-color: $color-white;
+  border-radius: 30px;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+  .monitoring-title {
+    font: bold 32px/38px $font-raleway;
+    text-transform: uppercase;
+    color: $color-black;
+    @media screen and (max-width: 576px) {
+      font-size: 22px;
+      line-height: 24px;
+    }
+  }
+}

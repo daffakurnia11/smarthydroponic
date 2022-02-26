@@ -24,6 +24,8 @@ use Maatwebsite\Excel\Facades\Excel;
 */
 
 Route::get('/', [PagesController::class, 'index']);
+Route::get('/monitoring', [PagesController::class, 'monitoring']);
+Route::get('/article', [PagesController::class, 'article']);
 
 Route::post('/pumpcontrol', [PumpController::class, 'pumpcontrol']);
 Route::post('/datainsert', [PumpController::class, 'datainsert']);
@@ -54,6 +56,8 @@ Route::middleware('auth')->group(function () {
       Route::get('/hydroponic', [ExportController::class, 'all_hydroponic']);
       Route::get('/solar-tracker', [ExportController::class, 'all_solar_tracker']);
     });
-    Route::resource('article', ArticleController::class);
+    Route::resource('article', ArticleController::class)->except('show');
   });
 });
+
+Route::get('/{article}', [ArticleController::class, 'show']);

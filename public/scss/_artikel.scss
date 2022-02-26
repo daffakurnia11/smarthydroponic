@@ -1,0 +1,122 @@
+.jumbotron2 {
+    background: url("../img/bc.png");
+    height: 460px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    align-items: center;
+    background-attachment: fixed;
+    &-judul {
+        font: bold 64px/75px $fonts-family;
+        text-align: center;
+        color: $color-white;
+        @media screen and (max-width: 576px) {
+            font-size: 45px;
+        }
+    }
+}
+
+.artikelterbaru {
+    .container {
+        width: fit-content;
+        border: 1px solid transparent;
+        margin: auto;
+        background-color: #59884e;
+        border-radius: 27.5px;
+        margin-top: -105px;
+    }
+    .konten {
+        text-align: center;
+        align-items: center;
+        .konten-title {
+            position: relative;
+            margin-top: 54px;
+            margin-bottom: 43px;
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: $color-white;
+                width: 100%;
+                height: 3px;
+                top: 50%;
+                left: 0;
+                z-index: 1;
+            }
+            .konten-span {
+                position: relative;
+                display: block;
+                font: bold 24px/28px $fonts-family;
+                text-align: center;
+                letter-spacing: 0.04em;
+                color: $color-white;
+                z-index: 2;
+                background-color: #59884e;
+                width: fit-content;
+            }
+        }
+        .konten-cards {
+            .cards-header {
+                font: normal 18px/21px $fonts-family;
+                font-weight: 500;
+                color: $color-white;
+                text-transform: uppercase;
+                margin-bottom: 32px;
+                margin-top: 23px;
+                margin-bottom: 25px;
+            }
+            .image-container {
+                width: 100%;
+                height: 200px;
+                .cards-image {
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            .cards-penjelasan {
+                font: normal 14px/16px $fonts-family;
+                letter-spacing: 0.04em;
+                margin-bottom: 26px;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+#artikellengkap {
+    height: fit-content;
+    padding-bottom: 70px;
+    .artikellengkap-rincian {
+        width: 100%;
+        height: 300px;
+        .rincian-paragraf {
+            text-align: justify;
+            margin: 10px 0 0 0;
+            font-size: 17px;
+            @media screen and (max-width: 576px) {
+                font-size: 12px;
+                line-height: 15px;
+            }
+        }
+        .rincian-header {
+            margin: 20px 0 0 0;
+            font-size: 23px;
+            text-transform: uppercase;
+            @media screen and (max-width: 576px) {
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+        .rincian-image {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 20px 0 0 0;
+            box-sizing: border-box;
+        }
+        .rincian-a {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #000;
+            display: block;
+        }
+    }
+}

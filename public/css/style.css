@@ -1,0 +1,547 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+nav.navbar {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 0;
+}
+
+nav.navbar .navbar-brand {
+  font: bold 14px/15px "Archivo", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+nav.navbar .navbar-nav .nav-link {
+  font: 200 14px/15px "Archivo", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: auto 15px;
+}
+
+nav.navbar .navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+body {
+  background-color: #f7fff5;
+  position: relative;
+}
+
+.jumbotron1 {
+  background: url("../img/background-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0;
+  min-height: 100vh;
+  align-items: center;
+  background-attachment: fixed;
+}
+
+.jumbotron1-header {
+  font: bold 55px/70px "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbotron1-header {
+    font-size: 35px;
+    line-height: 45px;
+  }
+}
+
+.jumbotron1-lead {
+  color: #ffffff;
+  font: normal 25px/33px "Raleway", sans-serif;
+}
+
+@media screen and (max-width: 576px) {
+  .jumbotron1-lead {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+.jumbotron1-button {
+  border: 2px solid #ffffff;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 27.5px;
+  background-color: transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+}
+
+.jumbotron1-button:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#home {
+  margin-bottom: 45px;
+}
+
+#home .swiper-button-prev {
+  font-size: 2rem;
+  color: #59884e;
+}
+
+#home .swiper-button-prev::after {
+  content: "";
+}
+
+#home .swiper-button-next {
+  font-size: 2rem;
+  color: #59884e;
+}
+
+#home .swiper-button-next::after {
+  content: "";
+}
+
+#home .col-md-6 .paragraf {
+  text-align: justify;
+  margin: 20px 0 0 0;
+  font: normal 18px/25px "Raleway", sans-serif;
+}
+
+@media screen and (max-width: 576px) {
+  #home .col-md-6 .paragraf {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 20px 0 0 0;
+  }
+}
+
+#home .col-md-6 .judul-bagian2 {
+  margin: 20px 0 0 0;
+  font: normal 36px/42px "Raleway", sans-serif;
+}
+
+@media screen and (max-width: 576px) {
+  #home .col-md-6 .judul-bagian2 {
+    font-size: 26px;
+    line-height: 36px;
+    margin: 20px 0 0 0;
+  }
+}
+
+#home .col-md-6 .gambar-bagian2 {
+  display: block;
+  width: 506px;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: auto;
+}
+
+#home .swiper-button {
+  border: 2px solid #59884e;
+  box-sizing: border-box;
+  color: #59884e;
+  background-color: #f7fff5;
+  border-radius: 50px;
+  font: bold 18px/21px "Raleway", sans-serif;
+  text-align: center;
+  padding: 11px 30px;
+  margin: 10px 15px;
+  cursor: default;
+}
+
+@media screen and (max-width: 576px) {
+  #home .swiper-button {
+    font-size: 14px;
+  }
+}
+
+#home .swiper-button.active {
+  background-color: #59884e;
+  color: #f7fff5;
+}
+
+#plants {
+  background-color: #59884e;
+  background-size: cover;
+  background-position: 0;
+  padding: 73px 0 10px;
+}
+
+#plants .plants-title {
+  color: #ffffff;
+  font: bold 72px/85px "Raleway", sans-serif;
+  width: fit-content;
+  font-size: 46px;
+  line-height: 60px;
+}
+
+#plants .plants-title::after {
+  display: block;
+  content: "";
+  width: 80%;
+  height: 2px;
+  background-color: #f7fff5;
+  margin-top: 28px;
+  margin-bottom: 73px;
+}
+
+#plants .cards .gambar-tanaman {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+#plants .cards .table {
+  color: #ffffff;
+}
+
+#plants .cards .table th {
+  font: bold 14px/16px "Raleway", sans-serif;
+  text-align: justify;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid;
+  padding: 30px 0 10px;
+}
+
+#plants .cards .table .rincian-tanaman .penjelasan {
+  font: normal 14px/16px "Raleway", sans-serif;
+  font-family: Raleway;
+  text-align: justify;
+  letter-spacing: 0.04em;
+  color: #f7fff5;
+}
+
+#plants .cards .table .rincian-tanaman .titik {
+  position: relative;
+  top: 50%;
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #f7fff5;
+  box-sizing: border-box;
+  transform: translateY(-25%);
+  display: block;
+}
+
+#plants .cards .table .rincian-tanaman .gambar-bagian3 {
+  width: 25px;
+  display: block;
+  padding-right: 10px;
+}
+
+#plants .cards .table .rincian-tanaman .bi-clock {
+  display: block;
+  padding-right: 10px;
+}
+
+#plants .plants-button {
+  border: 2px solid #ffffff;
+  display: block;
+  box-sizing: border-box;
+  color: #59884e;
+  width: 237px;
+  height: 45px;
+  background-color: #f7fff5;
+  border-radius: 22.5px;
+  font: bold 16px/19px "Raleway", sans-serif;
+  text-align: center;
+  margin-top: 39px;
+  margin-bottom: 58px;
+}
+
+#artikel .artikel-title {
+  font: bold 48px/56px "Raleway", sans-serif;
+  text-align: center;
+  padding-top: 61px;
+  padding-bottom: 53px;
+}
+
+#artikel .cards-artikel .artikel-header {
+  font: normal 18px/21px "Raleway", sans-serif;
+  font-weight: 500;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  text-align: center;
+  min-height: 42px;
+}
+
+#artikel .cards-artikel .artikel-header::before {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+#artikel .cards-artikel .image-container {
+  width: 100%;
+  height: 250px;
+}
+
+#artikel .cards-artikel .image-container .artikel-image {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0 5px;
+}
+
+#artikel .cards-artikel .artikel-paragraf {
+  font: normal 14px/16px "Raleway", sans-serif;
+  text-align: justify;
+  letter-spacing: 0.04em;
+  margin-top: 39px;
+  margin-bottom: 26px;
+}
+
+#artikel .artikel-button {
+  border: 2px solid #232721;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 27.5px;
+  background-color: transparent;
+  text-decoration: none;
+  color: #232721;
+  width: 379px;
+  max-width: 100%;
+  padding: 0.75rem 0;
+  border-radius: 22.5px;
+  font: bold 16px/19px "Raleway", sans-serif;
+  text-align: center;
+  margin-bottom: 127px;
+  margin-top: 26px;
+}
+
+.footer {
+  background-color: #59884e;
+  text-align: end;
+  width: 100%;
+  height: 131px;
+}
+
+.footer-rincian {
+  font: bold 24px/28px "Raleway", sans-serif;
+  text-align: right;
+  text-decoration: none;
+  color: #f7fff5;
+}
+
+.footer-rincian:hover {
+  text-decoration: none;
+  color: #f7fff5;
+}
+
+@media screen and (max-width: 576px) {
+  .footer-rincian {
+    font-size: 16px;
+  }
+}
+
+.jumbotron2 {
+  background: url("../img/bc.png");
+  height: 460px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  background-attachment: fixed;
+}
+
+.jumbotron2-judul {
+  font: bold 64px/75px "Raleway", sans-serif;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  .jumbotron2-judul {
+    font-size: 45px;
+  }
+}
+
+.artikelterbaru .container {
+  width: fit-content;
+  border: 1px solid transparent;
+  margin: auto;
+  background-color: #59884e;
+  border-radius: 27.5px;
+  margin-top: -105px;
+}
+
+.artikelterbaru .konten {
+  text-align: center;
+  align-items: center;
+}
+
+.artikelterbaru .konten .konten-title {
+  position: relative;
+  margin-top: 54px;
+  margin-bottom: 43px;
+}
+
+.artikelterbaru .konten .konten-title::after {
+  position: absolute;
+  content: "";
+  background-color: #ffffff;
+  width: 100%;
+  height: 3px;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+}
+
+.artikelterbaru .konten .konten-title .konten-span {
+  position: relative;
+  display: block;
+  font: bold 24px/28px "Raleway", sans-serif;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  z-index: 2;
+  background-color: #59884e;
+  width: fit-content;
+}
+
+.artikelterbaru .konten .konten-cards .cards-header {
+  font: normal 18px/21px "Raleway", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  margin-top: 23px;
+  margin-bottom: 25px;
+}
+
+.artikelterbaru .konten .konten-cards .image-container {
+  width: 100%;
+  height: 200px;
+}
+
+.artikelterbaru .konten .konten-cards .image-container .cards-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.artikelterbaru .konten .konten-cards .cards-penjelasan {
+  font: normal 14px/16px "Raleway", sans-serif;
+  letter-spacing: 0.04em;
+  margin-bottom: 26px;
+  color: #ffffff;
+}
+
+#artikellengkap {
+  height: fit-content;
+  padding-bottom: 70px;
+}
+
+#artikellengkap .artikellengkap-rincian {
+  width: 100%;
+  height: 300px;
+}
+
+#artikellengkap .artikellengkap-rincian .rincian-paragraf {
+  text-align: justify;
+  margin: 10px 0 0 0;
+  font-size: 17px;
+}
+
+@media screen and (max-width: 576px) {
+  #artikellengkap .artikellengkap-rincian .rincian-paragraf {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+#artikellengkap .artikellengkap-rincian .rincian-header {
+  margin: 20px 0 0 0;
+  font-size: 23px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 576px) {
+  #artikellengkap .artikellengkap-rincian .rincian-header {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+#artikellengkap .artikellengkap-rincian .rincian-image {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 20px 0 0 0;
+  box-sizing: border-box;
+}
+
+#artikellengkap .artikellengkap-rincian .rincian-a {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #000;
+  display: block;
+}
+
+header#monitoring {
+  min-height: 100vh;
+  background-image: url(../img/monitoring-header-bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+header#monitoring .header-title {
+  font: bold 64px/75px "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  header#monitoring .header-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
+header#monitoring .header-desc {
+  font: normal 28px/33px "Raleway", sans-serif;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  header#monitoring .header-desc {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+#hydroponic {
+  background-color: #f7fff5;
+}
+
+.monitoring-container {
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.monitoring-container .monitoring-title {
+  font: bold 32px/38px "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: #232721;
+}
+
+@media screen and (max-width: 576px) {
+  .monitoring-container .monitoring-title {
+    font-size: 22px;
+    line-height: 24px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
