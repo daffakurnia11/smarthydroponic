@@ -4,6 +4,7 @@ use App\Exports\SensorExport;
 use App\Exports\UsersExport;
 use App\Http\Controllers\Admin\PumpController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Admin\LoggerController;
 use App\Http\Controllers\Logger\HydroponicController;
@@ -53,5 +54,6 @@ Route::middleware('auth')->group(function () {
       Route::get('/hydroponic', [ExportController::class, 'all_hydroponic']);
       Route::get('/solar-tracker', [ExportController::class, 'all_solar_tracker']);
     });
+    Route::resource('article', ArticleController::class);
   });
 });

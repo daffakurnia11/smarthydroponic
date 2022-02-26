@@ -57,6 +57,25 @@
         <div class="menu-title">Solar Tracker</div>
       </a>
     </li>
+    
+    {{-- Article Management --}}
+    <li class="menu-label mt-0">Article Management</li>
+    <li class="{{ Request::is('admin/article') ? 'mm-active' : '' }}">
+      <a href="/admin/article">
+        <div class="parent-icon">
+          <i class="bi bi-journal-richtext"></i>
+        </div>
+        <div class="menu-title">Article Lists</div>
+      </a>
+    </li>
+    <li class="{{ Request::is('admin/article/create') ? 'mm-active' : '' }}">
+      <a href="/admin/article/create">
+        <div class="parent-icon">
+          <i class="bi bi-journal-plus"></i>
+        </div>
+        <div class="menu-title">Add Article</div>
+      </a>
+    </li>
 
   </ul>
   <!--end navigation-->
