@@ -7,12 +7,12 @@
 
   <!--Header-->
   <div class="page-breadcrumb d-flex flex-column flex-md-row align-items-center mb-3">
-    <div class="breadcrumb-title pe-md-3">Article Management</div>
+    <div class="breadcrumb-title pe-md-3">Plant Types</div>
     <div class="ps-md-3 ms-md-auto mx-auto mx-md-0 mt-3 mt-md-0">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0 p-0">
           <li class="breadcrumb-item"><a href="/admin"><i class="bx bx-home-alt"></i> Dashboard</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Article Management</li>
+          <li class="breadcrumb-item active" aria-current="page">Plant Types</li>
         </ol>
       </nav>
     </div>
@@ -20,8 +20,8 @@
   <!--end of Header-->
 
   <h6 class="mb-0 text-uppercase d-flex flex-column flex-sm-row align-items-center justify-content-between">
-    Article Lists
-    <a href="/admin/article/create" class="btn btn-primary mt-3 mt-sm-0">Add Article</a>
+    Hydroponic Plant Lists
+    <a href="/admin/plant/create" class="btn btn-primary mt-3 mt-sm-0">Add Plant</a>
   </h6>
   <hr>
   <div class="card">
@@ -31,40 +31,32 @@
           <thead>
             <tr>
               <th>No.</th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Article File</th>
-              <th>Reader</th>
-              <th>Created At</th>
-              <th>Published At</th>
+              <th>Jenis Tanaman</th>
+              <th>Lama di Persemaian</th>
+              <th>Jumlah Helai Daun</th>
+              <th>Masa Tanam</th>
+              <th>Gambar</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            @foreach ($articles as $article)
+            @foreach ($plants as $plant)
               <tr>
                 <td class="align-middle text-center">{{ $loop->iteration }}</td>
-                <td class="align-middle text-wrap">{{ $article->title }}</td>
-                <td class="align-middle text-wrap">{{ $article->description }}</td>
-                <td class="align-middle text-wrap">
-                  <a href="/files/article/paper/{{ $article->paper }}" target="_blank">
-                    {{ $article->paper }}
+                <td class="align-middle text-wrap">{{ $plant->name }}</td>
+                <td class="align-middle text-wrap">{{ $plant->nursery_time }}</td>
+                <td class="align-middle text-wrap">{{ $plant->leaves }}</td>
+                <td class="align-middle text-center">{{ $plant->planing_time}}</td>
+                <td class="align-middle text-center">
+                  <a href="/files/plants/{{ $plant->image }}" target="_blank">
+                    Lihat gambar
                   </a>
                 </td>
-                <td class="align-middle text-center">{{ $article->reader}}</td>
-                <td class="align-middle text-center">{{ $article->created_at }}</td>
                 <td class="align-middle text-center">
-                  @if ($article->published_at)
-                  {{ $article->published_at }}
-                  @else
-                  <span class="text-danger">Not published</span>
-                  @endif
-                </td>
-                <td class="align-middle text-center">
-                  <form action="/admin/article/{{ $article->slug }}" method="post">
+                  <form action="/admin/plant/{{ $plant->id }}" method="post">
                     @csrf
                     @method('DELETE')
-                    <a href="/admin/article/{{ $article->slug }}/edit" class="text-success"><i class="bi bi-pencil-square"></i> Edit</a>
+                    <a href="/admin/plant/{{ $plant->id }}/edit" class="text-success"><i class="bi bi-pencil-square"></i> Edit</a>
                     <button type="submit" class="btn btn-sm text-danger" id="deleteButton"><i class="bi bi-trash"></i> Delete</button>
                   </form>
                 </td>
@@ -74,12 +66,11 @@
           <tfoot>
             <tr>
               <th>No.</th>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Article File</th>
-              <th>Reader</th>
-              <th>Created At</th>
-              <th>Published At</th>
+              <th>Jenis Tanaman</th>
+              <th>Lama di Persemaian</th>
+              <th>Jumlah Helai Daun</th>
+              <th>Masa Tanam</th>
+              <th>Gambar</th>
               <th>Action</th>
             </tr>
           </tfoot>

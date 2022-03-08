@@ -32,13 +32,13 @@
               <div class="col-xl-12 col-sm-6">
                 <div class="mb-3">
                   <label class="form-label">From</label>
-                  <input class="result form-control" type="text" name="from" id="fromTime">
+                  <input class="result form-control fromTime" type="text" name="from">
                 </div>
               </div>
               <div class="col-xl-12 col-sm-6">
                 <div class="mb-3">
                   <label class="form-label">Until</label>
-                  <input class="result form-control" type="text" name="to" id="untilTime">
+                  <input class="result form-control untilTime" type="text" name="to">
                 </div>
               </div>
             </div>
@@ -63,13 +63,13 @@
               <div class="col-sm-6">
                 <div class="mb-3">
                   <label class="form-label">From</label>
-                  <input class="result form-control" type="text" value="{{ $from ?: '' }}" name="from" id="fromTime">
+                  <input class="result form-control fromTime" type="text" value="{{ $from ?: '' }}" name="from">
                 </div>
               </div>
               <div class="col-sm-6">
                 <div class="mb-3">
                   <label class="form-label">Until</label>
-                  <input class="result form-control" type="text" value="{{ $to ?: '' }}" name="to" id="untilTime">
+                  <input class="result form-control untilTime" type="text" value="{{ $to ?: '' }}" name="to">
                 </div>
               </div>
             </div>

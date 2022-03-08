@@ -46,14 +46,50 @@ if (flashdata) {
       confirmButtonColor: '#c6384d',
     })
   }
+  // Jenis tanaman berhasil ditambahkan
+  if (flashdata == 'Jenis tanaman berhasil ditambahkan') {
+    Swal.fire({
+      icon: 'success',
+      title: 'Tanaman berhasil ditambahkan!',
+      text: flashdata,
+      confirmButtonColor: '#c6384d',
+    })
+  }
+  // Gambar tanaman harus diupload!
+  if (flashdata == 'Gambar tanaman harus diupload!') {
+    Swal.fire({
+      icon: 'error',
+      title: 'Tidak ada gambar!',
+      text: flashdata,
+      confirmButtonColor: '#c6384d',
+    })
+  }
+  // Jenis tanaman berhasil diubah
+  if (flashdata == 'Jenis tanaman berhasil diubah') {
+    Swal.fire({
+      icon: 'success',
+      title: 'Tanaman berhasil diubah!',
+      text: flashdata,
+      confirmButtonColor: '#c6384d',
+    })
+  }
+  // Jenis tanaman berhasil dihapus
+  if (flashdata == 'Jenis tanaman berhasil dihapus') {
+    Swal.fire({
+      icon: 'success',
+      title: 'Tanaman berhasil dihapus!',
+      text: flashdata,
+      confirmButtonColor: '#c6384d',
+    })
+  }
 }
 
 $(function () {
   $('#deleteButton').on('click', function (e) {
     e.preventDefault();
     Swal.fire({
-      title: 'Deleting article?',
-      text: "The deleted article cannot be restored.",
+      title: 'Deleting data?',
+      text: "The deleted data cannot be restored.",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\ExportController;
 use App\Http\Controllers\Admin\LoggerController;
+use App\Http\Controllers\Admin\PlantController;
 use App\Http\Controllers\Logger\HydroponicController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
@@ -57,6 +58,8 @@ Route::middleware('auth')->group(function () {
       Route::get('/solar-tracker', [ExportController::class, 'all_solar_tracker']);
     });
     Route::resource('article', ArticleController::class)->except('show');
+
+    Route::resource('plant', PlantController::class)->except('show');
   });
 });
 

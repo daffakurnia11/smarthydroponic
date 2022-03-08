@@ -196,6 +196,10 @@ body {
   margin: auto;
 }
 
+#plants .cards .cards-title {
+  color: #ffffff;
+}
+
 #plants .cards .table {
   color: #ffffff;
 }
@@ -272,7 +276,7 @@ body {
   min-height: 42px;
 }
 
-#artikel .cards-artikel .artikel-header::before {
+#artikel .cards-artikel .artikel-header.top-border::before {
   display: block;
   content: "";
   width: 100%;
@@ -369,7 +373,6 @@ body {
 }
 
 .artikelterbaru .container {
-  width: fit-content;
   border: 1px solid transparent;
   margin: auto;
   background-color: #59884e;

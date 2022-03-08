@@ -1,62 +1,12 @@
 const action = $('.pumpcontrol').attr('action');
 var _token = $('meta[name=csrf-token]').attr('content');
 
-const swiper = new Swiper(".swiper", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: false,
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  allowTouchMove: false,
-});
-$(function () {
-  $(".swiper-button-prev").on("click", function () {
-    if ($("#firstSlide").hasClass("swiper-slide-active")) {
-      $("#firstButton").addClass("active");
-    } else {
-      $("#firstButton").removeClass("active");
-    }
-    if ($("#secondSlide").hasClass("swiper-slide-active")) {
-      $("#secondButton").addClass("active");
-    } else {
-      $("#secondButton").removeClass("active");
-    }
-    if ($("#thirdSlide").hasClass("swiper-slide-active")) {
-      $("#thirdButton").addClass("active");
-    } else {
-      $("#thirdButton").removeClass("active");
-    }
-  });
-});
-$(function () {
-  $(".swiper-button-next").on("click", function () {
-    if ($("#firstSlide").hasClass("swiper-slide-active")) {
-      $("#firstButton").addClass("active");
-    } else {
-      $("#firstButton").removeClass("active");
-    }
-    if ($("#secondSlide").hasClass("swiper-slide-active")) {
-      $("#secondButton").addClass("active");
-    } else {
-      $("#secondButton").removeClass("active");
-    }
-    if ($("#thirdSlide").hasClass("swiper-slide-active")) {
-      $("#thirdButton").addClass("active");
-    } else {
-      $("#thirdButton").removeClass("active");
-    }
-  });
-});
-
 $(function () {
   "use strict";
-  $('#fromTime').bootstrapMaterialDatePicker({
+  $('.fromTime').bootstrapMaterialDatePicker({
     format: 'YYYY-MM-DD HH:mm'
   });
-  $('#untilTime').bootstrapMaterialDatePicker({
+  $('.untilTime').bootstrapMaterialDatePicker({
     format: 'YYYY-MM-DD HH:mm'
   });
 });

@@ -20,58 +20,58 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-        Article::factory(20)->create();
+        // Article::factory(20)->create();
 
-        // $output = new Output;
-        // $output->name   = 'ph Up';
-        // $output->board  = 1;
-        // $output->gpio   = 5;
-        // $output->state  = 1;
-        // $output->save();
+        $output = new Output;
+        $output->name   = 'ph Up';
+        $output->board  = 1;
+        $output->gpio   = 5;
+        $output->state  = 1;
+        $output->save();
 
-        // $output = new Output;
-        // $output->name   = 'ph Down';
-        // $output->board  = 1;
-        // $output->gpio   = 16;
-        // $output->state  = 1;
-        // $output->save();
+        $output = new Output;
+        $output->name   = 'ph Down';
+        $output->board  = 1;
+        $output->gpio   = 16;
+        $output->state  = 1;
+        $output->save();
 
-        // $output = new Output;
-        // $output->name   = 'Nutrisi A';
-        // $output->board  = 1;
-        // $output->gpio   = 15;
-        // $output->state  = 1;
-        // $output->save();
+        $output = new Output;
+        $output->name   = 'Nutrisi A';
+        $output->board  = 1;
+        $output->gpio   = 15;
+        $output->state  = 1;
+        $output->save();
 
-        // $user = new User;
-        // $user->name     = 'Admin';
-        // $user->email    = 'smarthydroponictfunas@gmail.com';
-        // $user->password = Hash::make('TF2021Hydroponic');
-        // $user->save();
+        $user = new User;
+        $user->name     = 'Admin';
+        $user->email    = 'smarthydroponictfunas@gmail.com';
+        $user->password = Hash::make('TF2021Hydroponic');
+        $user->save();
 
-        // $sensor = new Sensor;
-        // $sensor->value1 = 0;
-        // $sensor->value2 = 0;
-        // $sensor->value3 = 0;
-        // $sensor->value4 = 0;
-        // $sensor->value5 = 0;
-        // $sensor->value6 = 0;
-        // $sensor->value7 = 0;
-        // $sensor->value8 = 0;
-        // $sensor->value9 = 0;
-        // $sensor->reading_time = Carbon::now();
-        // $sensor->save();
-        // $sensor = new Sensor;
-        // $sensor->value1 = 0;
-        // $sensor->value2 = 0;
-        // $sensor->value3 = 0;
-        // $sensor->value4 = 0;
-        // $sensor->value5 = 0;
-        // $sensor->value6 = 0;
-        // $sensor->value7 = 0;
-        // $sensor->value8 = 0;
-        // $sensor->value9 = 0;
-        // $sensor->reading_time = Carbon::now();
-        // $sensor->save();
+        $sensor = new Sensor;
+        $sensor->value1 = 0;
+        $sensor->value2 = 0;
+        $sensor->value3 = 0;
+        $sensor->value4 = 0;
+        $sensor->value5 = 0;
+        $sensor->value6 = 0;
+        $sensor->value7 = 0;
+        $sensor->value8 = 0;
+        $sensor->value9 = 0;
+        $sensor->reading_time = Carbon::now();
+        $sensor->save();
+        $sensor = new Sensor;
+        $sensor->value1 = 0;
+        $sensor->value2 = 0;
+        $sensor->value3 = 0;
+        $sensor->value4 = 0;
+        $sensor->value5 = 0;
+        $sensor->value6 = 0;
+        $sensor->value7 = 0;
+        $sensor->value8 = 0;
+        $sensor->value9 = 0;
+        $sensor->reading_time = Carbon::now();
+        $sensor->save();
     }
 }

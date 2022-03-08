@@ -7,12 +7,12 @@
 
   <!--Header-->
   <div class="page-breadcrumb d-flex flex-column flex-md-row align-items-center mb-3">
-    <div class="breadcrumb-title pe-md-3">Article</div>
+    <div class="breadcrumb-title pe-md-3">Article Management</div>
     <div class="ps-md-3 ms-md-auto mx-auto mx-md-0 mt-3 mt-md-0">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-0 p-0">
           <li class="breadcrumb-item"><a href="/admin"><i class="bx bx-home-alt"></i> Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="/admin/article"><i class="bi bi-journal-richtext"></i> Article</a></li>
+          <li class="breadcrumb-item"><a href="/admin/article"><i class="bi bi-journal-richtext"></i> Article Management</a></li>
           <li class="breadcrumb-item active" aria-current="page">{{ $article->title }}</li>
         </ol>
       </nav>
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-success">Add Article!</button>
+        <button type="submit" class="btn btn-success">Edit Article!</button>
       </div>
     </form>
   </div>

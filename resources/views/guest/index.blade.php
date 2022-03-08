@@ -125,9 +125,6 @@
           SMARTHYDROPONIC
         </button>
       </div>
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev"><i class="bi bi-arrow-left-circle"></i></div>
-      <div class="swiper-button-next"><i class="bi bi-arrow-right-circle"></i></div>
     </div>
   </section>
   <!-- Akhir Hidroponik Bagian 2 Slide 1 -->
@@ -141,358 +138,87 @@
       </h1>
       <div class="cards">
         <div class="row">
-          <div class="col-lg-3 col-sm-6">
-            <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-            <table class="table">
-              <tr>
-                <th>Brokoli</th>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center"> 
-                  <img class="gambar-bagian3" src="img/tangan.svg">
-                  <span class="penjelasan flex-grow-1">2 Minggu</span>
-                <span class="titik"></span>
-              </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <img class="gambar-bagian3" src="img/daun.svg">
-                  <span class="penjelasan flex-grow-1">3-4 helai</span>
-                <span class="titik"></span></td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <i class="bi bi-clock"></i>
-                  <span class="penjelasan flex-grow-1">65 HST</span>
-                <span class="titik"></span>
-              </td>
-              </tr>
-              </div>
-            </table>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-            <table class="table">
-              <tr>
-                <th>Cabai</th>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <img class="gambar-bagian3" src="img/tangan.svg">
-                  <span class="penjelasan flex-grow-1">40-50 Hari</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <img class="gambar-bagian3" src="img/daun.svg">
-                  <span class="penjelasan flex-grow-1">4-5 helai</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <i class="bi bi-clock"></i>
-                  <span class="penjelasan flex-grow-1">85-90 HST</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-            <table class="table">
-              <tr>
-                <th>Selada</th>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <img class="gambar-bagian3" src="img/tangan.svg">
-                  <span class="penjelasan flex-grow-1">10-18 Hari</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center">
-                  <img class="gambar-bagian3" src="img/daun.svg">
-                  <span class="penjelasan flex-grow-1">4 helai</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <i class="bi bi-clock"></i>
-                  <span class="penjelasan flex-grow-1">45-55 HST</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-            <table class="table">
-              <tr>
-                <th>Paprika</th>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <img class="gambar-bagian3" src="img/tangan.svg">
-                  <span class="penjelasan flex-grow-1">2-3 Minggu</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <img class="gambar-bagian3" src="img/daun.svg">
-                  <span class="penjelasan flex-grow-1">4-5 helai</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-              <tr>
-                <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                  <i class="bi bi-clock"></i>
-                  <span class="penjelasan flex-grow-1">20 MST</span>
-                  <span class="titik"></span>
-                </td>
-              </tr>
-            </table>
-          </div>
+          @if ($first_plant->isNotEmpty())
+            @foreach ($first_plant as $plant)
+            <div class="col-lg-3 col-sm-6">
+              <img src="/files/plants/{{ $plant->image }}" class="gambar-tanaman" alt="Brokoli" />
+              <table class="table">
+                <tr>
+                  <th>{{ $plant->name }}</th>
+                </tr>
+                <tr>
+                  <td class="rincian-tanaman d-flex justify-content-center align-items-center"> 
+                    <img class="gambar-bagian3" src="img/tangan.svg">
+                    <span class="penjelasan flex-grow-1">{{ $plant->nursery_time }}</span>
+                    <span class="titik"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
+                    <img class="gambar-bagian3" src="img/daun.svg">
+                    <span class="penjelasan flex-grow-1">{{ $plant->leaves }}</span>
+                    <span class="titik"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
+                    <i class="bi bi-clock"></i>
+                    <span class="penjelasan flex-grow-1">{{ $plant->planing_time }}</span>
+                    <span class="titik"></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            @endforeach
+          @else
+            <h2 class="cards-title text-center mb-5 pb-5">Belum ada data</h2>
+          @endif
         </div>
       </div>
       <div class="collapse" id="collapseExample">
         <div class="cards">
           <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Melon</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg"> 
-                    <span class="penjelasan flex-grow-1">12-14 Hari</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg"> 
-                    <span class="penjelasan flex-grow-1">4 helai</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">75-90 HST</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Pakcoi</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">3-4 Minggu</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">3-5 helai</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">2 bulan</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Sawi</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">3 Minggu</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">4-5 helai</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">2 bulan</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Seledri</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">2-3 Minggu</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">4 helai</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">6-8 MST</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Tomat</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">3-4 Minggu</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">3-4 helai</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">78-85 HST</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Timun Jepang</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">10-14 Hari</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">2-3 helai</span>
-                  <span class="titik"></span>
-                </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">38-40 HST</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Terong Jepang</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">22-26 Hari</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">5 helai</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">90 HST</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-              </table>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <img src="img/slide3.jpg" class="gambar-tanaman" alt="Brokoli" />
-              <table class="table">
-                <tr>
-                  <th>Kailan</th>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/tangan.svg">
-                    <span class="penjelasan flex-grow-1">10-18 Hari</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <img class="gambar-bagian3" src="img/daun.svg">
-                    <span class="penjelasan flex-grow-1">3-5 helai</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="rincian-tanaman d-flex justify-content-center align-items-center">
-                    <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">52-56 HST</span>
-                    <span class="titik"></span>
-                  </td>
-                </tr>
-                </div>
-              </table>
-            </div>
-            </div>
+            @if($other_plant)
+              @foreach ($other_plant as $plant)
+              <div class="col-lg-3 col-sm-6">
+                <img src="/files/plants/{{ $plant->image }}" class="gambar-tanaman" alt="Brokoli" />
+                <table class="table">
+                  <tr>
+                    <th>{{ $plant->name }}</th>
+                  </tr>
+                  <tr>
+                    <td class="rincian-tanaman d-flex justify-content-center align-items-center">
+                      <img class="gambar-bagian3" src="img/tangan.svg"> 
+                      <span class="penjelasan flex-grow-1">{{ $plant->nursery_time }}</span>
+                      <span class="titik"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="rincian-tanaman d-flex justify-content-center align-items-center">
+                      <img class="gambar-bagian3" src="img/daun.svg"> 
+                      <span class="penjelasan flex-grow-1">{{ $plant->leaves }}</span>
+                      <span class="titik"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="rincian-tanaman d-flex justify-content-center align-items-center">
+                      <i class="bi bi-clock"></i> <span class="penjelasan flex-grow-1">{{ $plant->planing_time }}</span>
+                      <span class="titik"></span>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              @endforeach
+            @endif
+          </div>
+        </div>
       </div>
     </div>
+    @if ($other_plant)
     <button class="plants-button text-center mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
       MORE
     </button>
+    @endif
   </section>
   <!-- Akhir Hidroponik Bagian 3 -->
 
@@ -502,19 +228,25 @@
         <h1 class="artikel-title">ARTIKEL</h1>
         <div class="cards-artikel">
           <div class="row">
-            @foreach ($newest as $article)
-            <div class="col-lg-3 col-sm-6">
-              <h2 class="artikel-header d-block">
-                {{ $article->title }}
-              </h2>
-              <div class="image-container">
-                <img src="/files/article/image/{{ $article->image }}" class="artikel-image" alt="slide4" />
+            @if ($newest->isNotEmpty())
+              @foreach ($newest as $article)
+              <div class="col-lg-3 col-sm-6">
+                <h2 class="artikel-header top-border d-block">
+                  {{ $article->title }}
+                </h2>
+                <div class="image-container">
+                  <img src="/files/article/image/{{ $article->image }}" class="artikel-image" alt="slide4" />
+                </div>
+                <p class="artikel-paragraf">
+                  {{ $article->description }}
+                </p>
               </div>
-              <p class="artikel-paragraf">
-                {{ $article->description }}
-              </p>
-            </div>
-            @endforeach
+              @endforeach
+            @else
+            <h2 class="artikel-header d-block text-center">
+              Belum ada artikel
+            </h2>
+            @endif
           </div>
         </div>
       </div>

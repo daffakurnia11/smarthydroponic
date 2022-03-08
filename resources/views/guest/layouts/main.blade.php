@@ -53,5 +53,56 @@
     <script src="/vendor/jquery/dist/jquery.js"></script>
     <script src="/vendor/swiper/swiper-bundle.min.js"></script>
     <script src="js/script.js?modify={{ date("Ymd") }}"></script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: false,
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        allowTouchMove: false,
+      });
+      $(function () {
+        $(".swiper-button-prev").on("click", function () {
+          if ($("#firstSlide").hasClass("swiper-slide-active")) {
+            $("#firstButton").addClass("active");
+          } else {
+            $("#firstButton").removeClass("active");
+          }
+          if ($("#secondSlide").hasClass("swiper-slide-active")) {
+            $("#secondButton").addClass("active");
+          } else {
+            $("#secondButton").removeClass("active");
+          }
+          if ($("#thirdSlide").hasClass("swiper-slide-active")) {
+            $("#thirdButton").addClass("active");
+          } else {
+            $("#thirdButton").removeClass("active");
+          }
+        });
+      });
+      $(function () {
+        $(".swiper-button-next").on("click", function () {
+          if ($("#firstSlide").hasClass("swiper-slide-active")) {
+            $("#firstButton").addClass("active");
+          } else {
+            $("#firstButton").removeClass("active");
+          }
+          if ($("#secondSlide").hasClass("swiper-slide-active")) {
+            $("#secondButton").addClass("active");
+          } else {
+            $("#secondButton").removeClass("active");
+          }
+          if ($("#thirdSlide").hasClass("swiper-slide-active")) {
+            $("#thirdButton").addClass("active");
+          } else {
+            $("#thirdButton").removeClass("active");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

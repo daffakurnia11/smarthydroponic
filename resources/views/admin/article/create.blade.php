@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-success">Add Article!</button>
+        <button type="submit" class="btn btn-success">Add New Plant!</button>
       </div>
     </form>
   </div>

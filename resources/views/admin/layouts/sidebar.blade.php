@@ -59,21 +59,21 @@
     </li>
     
     {{-- Article Management --}}
-    <li class="menu-label mt-0">Article Management</li>
+    <li class="menu-label mt-0">Content Management</li>
     <li class="{{ Request::is('admin/article') ? 'mm-active' : '' }}">
       <a href="/admin/article">
         <div class="parent-icon">
           <i class="bi bi-journal-richtext"></i>
         </div>
-        <div class="menu-title">Article Lists</div>
+        <div class="menu-title">Article Management</div>
       </a>
     </li>
-    <li class="{{ Request::is('admin/article/create') ? 'mm-active' : '' }}">
-      <a href="/admin/article/create">
+    <li class="{{ Request::is('admin/plant') ? 'mm-active' : '' }}">
+      <a href="/admin/plant">
         <div class="parent-icon">
-          <i class="bi bi-journal-plus"></i>
+          <i class="bi bi-list-check"></i>
         </div>
-        <div class="menu-title">Add Article</div>
+        <div class="menu-title">Plant Types</div>
       </a>
     </li>
 

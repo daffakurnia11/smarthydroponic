@@ -21,19 +21,25 @@
       </h2>
       <div class="konten-cards">
         <div class="row">
-          @foreach ($newest as $article)
-          <div class="col-lg-3 col-sm-6 px-3">
-            <div class="image-container d-flex justify-content-center align-items-center">
-              <img src="/files/article/image/{{ $article->image }}" class="cards-image d-block" alt="slide4" />
-            </div>
-            <h2 class="cards-header text-start">
-              {{ $article->title }}
+          @if ($newest->isNotEmpty())
+            @foreach ($newest as $article)
+              <div class="col-lg-3 col-sm-6 px-3 pb-5">
+                <div class="image-container d-flex justify-content-center align-items-center">
+                  <img src="/files/article/image/{{ $article->image }}" class="cards-image d-block" alt="slide4" />
+                </div>
+                <h2 class="cards-header text-start">
+                  {{ $article->title }}
+                </h2>
+                {{-- <p class="cards-penjelasan text-start">
+                  {{ $article->description }}
+                </p> --}}
+              </div>
+            @endforeach
+          @else
+            <h2 class="cards-header text-center mb-5">
+              Belum ada artikel
             </h2>
-            <p class="cards-penjelasan text-start">
-              {{ $article->description }}
-            </p>
-          </div>
-          @endforeach
+          @endif
         </div>
       </div>
     </div>
@@ -44,24 +50,30 @@
 <!-- Body 2 -->
 <section id="artikellengkap">
   <div class="container">
-    @foreach ($articles as $article)
-    <div class="row justify-content-center align-items-center mt-5">
-      <div class="col-md-6">
-        <div class="artikellengkap-rincian d-flex justify-content-center align-items-center">
-          <img src="/files/article/image/{{ $article->image }}" class="rincian-image d-block" alt="article" />
+    @if ($articles->isNotEmpty())
+      @foreach ($articles as $article)
+      <div class="row justify-content-center align-items-center mt-5">
+        <div class="col-md-6">
+          <div class="artikellengkap-rincian d-flex justify-content-center align-items-center">
+            <img src="/files/article/image/{{ $article->image }}" class="rincian-image d-block" alt="article" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h2 class="rincian-header">
+            {{ $article->title }}
+          </h2>
+          <p class="rincian-paragraf">
+            {{ $article->description }}
+          </p>
+          <a class="rincian-a" href="/{{ $article->slug }}" target="_blank">Lebih Banyak ></a>
         </div>
       </div>
-      <div class="col-md-6">
-        <h2 class="rincian-header">
-          {{ $article->title }}
-        </h2>
-        <p class="rincian-paragraf">
-          {{ $article->description }}
-        </p>
-        <a class="rincian-a" href="/{{ $article->slug }}" target="_blank">Lebih Banyak ></a>
-      </div>
-    </div>
-    @endforeach
+      @endforeach
+    @else
+      <h2 class="rincian-header text-center my-5">
+        Belum ada artikel
+      </h2>
+    @endif
   </div>
 </section>
 <!-- Akhir Body 2 -->
