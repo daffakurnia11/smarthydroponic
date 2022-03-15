@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function () {
   Route::post('/logout', [AdminController::class, 'logout']);
   Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index']);
+    Route::post('/control_update/{control}', [AdminController::class, 'control_update']);
     Route::prefix('/monitoring')->group(function () {
       Route::get('/hydroponic', [AdminController::class, 'hydroponic']);
       Route::get('/solar-tracker', [AdminController::class, 'solar_tracker']);

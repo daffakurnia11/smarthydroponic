@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Control;
 use App\Models\Output;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -42,7 +43,8 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.index', [
-            'title'     => 'Dashboard Controll'
+            'title'     => 'Dashboard Control',
+            'control'   => Control::first()
         ]);
     }
 
@@ -61,5 +63,21 @@ class AdminController extends Controller
         return view('admin.monitoring.solar-tracker', [
             'title'             => 'Monitoring Solar Tracker',
         ]);
+    }
+
+    public function control_update(Request $request, Control $control)
+    {
+        $validated = $request->validate([
+            'control'       => 'required|boolean',
+            'upper_level'   => 'required|integer',
+            'lower_level'   => 'required|integer',
+            'upper_ph'      => 'required|integer',
+            'lower_ph'      => 'required|integer',
+            'upper_nutrisi' => 'required|integer',
+            'lower_nutrisi' => 'required|integer',
+        ]);
+
+        $control->update($validated);
+        return redirect('/admin')->with('message', 'System control has been updated');
     }
 }

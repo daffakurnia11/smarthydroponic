@@ -82,6 +82,15 @@ if (flashdata) {
       confirmButtonColor: '#c6384d',
     })
   }
+  // System control has been updated
+  if (flashdata == 'System control has been updated') {
+    Swal.fire({
+      icon: 'success',
+      title: 'Control Updated!',
+      text: flashdata,
+      confirmButtonColor: '#c6384d',
+    })
+  }
 }
 
 $(function () {

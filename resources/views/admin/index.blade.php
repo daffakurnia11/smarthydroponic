@@ -1,6 +1,9 @@
 @extends('admin.layouts.main')
 
 @section('container')
+  @if (session()->has('message'))
+    <div id="flash-data" data-flashdata="{{ session('message') }}"></div>
+  @endif
   <!--Header-->
   <div class="page-breadcrumb d-flex flex-column flex-md-row align-items-center mb-3">
     <div class="breadcrumb-title pe-md-3">Hallo, {{ auth()->user()->name }}</div>
@@ -129,6 +132,119 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <h6 class="mb-0 text-uppercase">System Controls</h6>
+  <hr>
+  <div class="card">
+    <form action="/admin/control_update/{{ $control->id }}" method="post">
+      @csrf
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="card shadow-md">
+              <div class="card-body">
+                <h6 class="mb-0 text-uppercase">Control Types</h6>
+                <hr>
+                <div class="mb-3">
+                  <select class="form-select @error('control') is-invalid @enderror" name="control" id="control" aria-label="Default select example">
+                    <option selected="" disabled>--Choose control types--</option>
+                    <option value="0" {{ $control->control == 0 ? 'selected' : '' }}>Manual</option>
+                    <option value="1" {{ $control->control == 1 ? 'selected' : '' }}>Automatic</option>
+                  </select>
+                  @error('control')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card shadow-md">
+              <div class="card-body">
+                <h6 class="mb-0 text-uppercase">Threshold Level</h6>
+                <hr>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control @error('upper_level') is-invalid @enderror" id="upper_level" name="upper_level" placeholder="0" value="{{ $control->upper_level }}">
+                  <label for="upper_level">Upper Level</label>
+                  @error('upper_level')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control @error('lower_level') is-invalid @enderror" id="lower_level" name="lower_level" placeholder="0" value="{{ $control->lower_level }}">
+                  <label for="lower_level">Lower Level</label>
+                  @error('lower_level')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card shadow-md">
+              <div class="card-body">
+                <h6 class="mb-0 text-uppercase">Threshold pH</h6>
+                <hr>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control @error('upper_ph') is-invalid @enderror" id="upper_ph" name="upper_ph" placeholder="0" value="{{ $control->upper_ph }}">
+                  <label for="upper_ph">Upper pH</label>
+                  @error('upper_ph')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control @error('lower_ph') is-invalid @enderror" id="lower_ph" name="lower_ph" placeholder="0" value="{{ $control->lower_ph }}">
+                  <label for="lower_ph">Lower pH</label>
+                  @error('lower_ph')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="card shadow-md">
+              <div class="card-body">
+                <h6 class="mb-0 text-uppercase">Threshold Nutrition</h6>
+                <hr>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control @error('upper_nutrisi') is-invalid @enderror" id="upper_nutrisi" name="upper_nutrisi" placeholder="0" value="{{ $control->upper_nutrisi }}">
+                  <label for="upper_nutrisi">Upper Nutrition</label>
+                  @error('upper_nutrisi')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+                <div class="form-floating mb-3">
+                  <input type="number" class="form-control @error('lower_nutrisi') is-invalid @enderror" id="lower_nutrisi" name="lower_nutrisi" placeholder="0" value="{{ $control->lower_nutrisi }}">
+                  <label for="lower_nutrisi">Lower Nutrition</label>
+                  @error('lower_nutrisi')
+                    <div class="invalid-feedback">
+                      {{ $message }}
+                    </div>
+                  @enderror
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer">
+        <button type="submit" class="btn btn-primary ms-auto d-block">Set Control</button>
+      </div>
+    </form>
   </div>
 
   <script>
