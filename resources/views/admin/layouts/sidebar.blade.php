@@ -19,6 +19,13 @@
         <div class="menu-title">Dashboard</div>
       </a>
     </li>
+    <li class="{{ Request::is('admin/set-point') ? 'mm-active' : '' }}">
+      <a href="/admin/set-point">
+        <div class="parent-icon"><i class="bi bi-table"></i>
+        </div>
+        <div class="menu-title">Data Set Point</div>
+      </a>
+    </li>
     
     {{-- Database Menu --}}
     <li class="menu-label mt-0">Monitoring</li>

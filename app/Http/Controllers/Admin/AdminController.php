@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Control;
 use App\Models\Output;
+use App\Models\Setpoint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -96,5 +97,13 @@ class AdminController extends Controller
             'locked'        => 0
         ]);
         return redirect('/admin')->with('message', 'System control has been updated');
+    }
+
+    public function set_point()
+    {
+        return view('admin.setpoint', [
+            'title'     => 'Data Set Point Hydroponic Plants',
+            'setpoints' => Setpoint::all()
+        ]);
     }
 }
