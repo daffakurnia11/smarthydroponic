@@ -401,7 +401,7 @@ var updateChart = function () {
 updateChart();
 setInterval(() => {
   updateChart();
-}, 2000);
+}, 10000);
 
 var updateData = function (value1, value2, value3, value4, value5, value6, value7, x, y) {
   $.ajax({

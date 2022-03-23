@@ -592,7 +592,7 @@
       updateChart();
       setInterval(() => {
         updateChart();
-      }, 2000);
+      }, 10000);
 
     });
   </script>
