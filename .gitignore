@@ -2,7 +2,7 @@
 /public/hot
 /public/storage
 /public/smart_hydroponic
-/public/files
+/public/files/article
 /storage/*.key
 /vendor
 .env

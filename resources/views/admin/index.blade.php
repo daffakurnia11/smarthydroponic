@@ -147,7 +147,7 @@
                 <h6 class="mb-0 text-uppercase">Control Types</h6>
                 <hr>
                 <div class="mb-3">
-                  <select class="form-select @error('control') is-invalid @enderror" name="control" id="control" aria-label="Default select example">
+                  <select class="form-select @error('control') is-invalid @enderror" name="control" id="control" @if($control->locked == 1) disabled @endif>
                     <option selected="" disabled>--Choose control types--</option>
                     <option value="0" {{ $control->control == 0 ? 'selected' : '' }}>Manual</option>
                     <option value="1" {{ $control->control == 1 ? 'selected' : '' }}>Automatic</option>
@@ -166,18 +166,24 @@
               <div class="card-body">
                 <h6 class="mb-0 text-uppercase">Threshold Level</h6>
                 <hr>
-                <div class="form-floating mb-3">
-                  <input type="number" class="form-control @error('upper_level') is-invalid @enderror" id="upper_level" name="upper_level" placeholder="0" value="{{ $control->upper_level }}">
-                  <label for="upper_level">Upper Level</label>
+                <div class="mb-3">
+                  <label for="upper_level" class="form-label">Upper Level</label>
+                  <div class="input-group">
+                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('upper_level') is-invalid @enderror" id="upper_level" name="upper_level" placeholder="0" value="{{ $control->upper_level }}">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                  </div>
                   @error('upper_level')
-                    <div class="invalid-feedback">
+                    <small class="text-danger">
                       {{ $message }}
-                    </div>
+                    </small>
                   @enderror
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="number" class="form-control @error('lower_level') is-invalid @enderror" id="lower_level" name="lower_level" placeholder="0" value="{{ $control->lower_level }}">
-                  <label for="lower_level">Lower Level</label>
+                <div class="mb-3">
+                  <label for="lower_level" class="form-label">Lower Level</label>
+                  <div class="input-group">
+                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('lower_level') is-invalid @enderror" id="lower_level" name="lower_level" placeholder="0" value="{{ $control->lower_level }}">
+                    <span class="input-group-text" id="basic-addon2">cm</span>
+                  </div>
                   @error('lower_level')
                     <div class="invalid-feedback">
                       {{ $message }}
@@ -192,18 +198,24 @@
               <div class="card-body">
                 <h6 class="mb-0 text-uppercase">Threshold pH</h6>
                 <hr>
-                <div class="form-floating mb-3">
-                  <input type="number" class="form-control @error('upper_ph') is-invalid @enderror" id="upper_ph" name="upper_ph" placeholder="0" value="{{ $control->upper_ph }}">
-                  <label for="upper_ph">Upper pH</label>
+                <div class="mb-3">
+                  <label for="upper_ph" class="form-label">Upper pH</label>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon2">pH</span>
+                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('upper_ph') is-invalid @enderror" id="upper_ph" name="upper_ph" placeholder="0" value="{{ $control->upper_ph }}">
+                  </div>
                   @error('upper_ph')
-                    <div class="invalid-feedback">
+                    <small class="text-danger">
                       {{ $message }}
-                    </div>
+                    </small>
                   @enderror
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="number" class="form-control @error('lower_ph') is-invalid @enderror" id="lower_ph" name="lower_ph" placeholder="0" value="{{ $control->lower_ph }}">
-                  <label for="lower_ph">Lower pH</label>
+                <div class="mb-3">
+                  <label for="lower_ph" class="form-label">Lower pH</label>
+                  <div class="input-group">
+                    <span class="input-group-text" id="basic-addon2">pH</span>
+                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('lower_ph') is-invalid @enderror" id="lower_ph" name="lower_ph" placeholder="0" value="{{ $control->lower_ph }}">
+                  </div>
                   @error('lower_ph')
                     <div class="invalid-feedback">
                       {{ $message }}
@@ -218,18 +230,24 @@
               <div class="card-body">
                 <h6 class="mb-0 text-uppercase">Threshold Nutrition</h6>
                 <hr>
-                <div class="form-floating mb-3">
-                  <input type="number" class="form-control @error('upper_nutrisi') is-invalid @enderror" id="upper_nutrisi" name="upper_nutrisi" placeholder="0" value="{{ $control->upper_nutrisi }}">
-                  <label for="upper_nutrisi">Upper Nutrition</label>
+                <div class="mb-3">
+                  <label for="upper_nutrisi" class="form-label">Upper Nutrition</label>
+                  <div class="input-group">
+                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('upper_nutrisi') is-invalid @enderror" id="upper_nutrisi" name="upper_nutrisi" placeholder="0" value="{{ $control->upper_nutrisi }}">
+                    <span class="input-group-text" id="basic-addon2">ppm</span>
+                  </div>
                   @error('upper_nutrisi')
-                    <div class="invalid-feedback">
+                    <small class="text-danger">
                       {{ $message }}
-                    </div>
+                    </small>
                   @enderror
                 </div>
-                <div class="form-floating mb-3">
-                  <input type="number" class="form-control @error('lower_nutrisi') is-invalid @enderror" id="lower_nutrisi" name="lower_nutrisi" placeholder="0" value="{{ $control->lower_nutrisi }}">
-                  <label for="lower_nutrisi">Lower Nutrition</label>
+                <div class="mb-3">
+                  <label for="lower_nutrisi" class="form-label">Lower Nutrition</label>
+                  <div class="input-group">
+                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('lower_nutrisi') is-invalid @enderror" id="lower_nutrisi" name="lower_nutrisi" placeholder="0" value="{{ $control->lower_nutrisi }}">
+                    <span class="input-group-text" id="basic-addon2">ppm</span>
+                  </div>
                   @error('lower_nutrisi')
                     <div class="invalid-feedback">
                       {{ $message }}
@@ -241,8 +259,9 @@
           </div>
         </div>
       </div>
-      <div class="card-footer">
-        <button type="submit" class="btn btn-primary ms-auto d-block">Set Control</button>
+      <div class="card-footer d-flex justify-content-end">
+        <a href="/admin/control_reset?control={{ $control->id }}" id="resetControl" class="btn d-block {{ $control->locked != null ? 'btn-danger' : 'btn-outline-danger disabled' }} mx-2">Reset Control</a>
+        <button type="submit" class="{{ $control->locked != null ? 'btn-outline-primary disabled' : 'btn-primary' }} btn d-block mx-2">Set Control</button>
       </div>
     </form>
   </div>

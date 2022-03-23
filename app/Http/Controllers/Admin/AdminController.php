@@ -76,8 +76,25 @@ class AdminController extends Controller
             'upper_nutrisi' => 'required|integer',
             'lower_nutrisi' => 'required|integer',
         ]);
+        $validated['locked'] = true;
 
         $control->update($validated);
+        return redirect('/admin')->with('message', 'System control has been updated');
+    }
+
+    public function control_reset(Request $request)
+    {
+        $control = Control::firstWhere('id', $request->control);
+        $control->update([
+            'control'       => 0,
+            'upper_level'   => 0,
+            'lower_level'   => 0,
+            'upper_ph'      => 0,
+            'lower_ph'      => 0,
+            'upper_nutrisi' => 0,
+            'lower_nutrisi' => 0,
+            'locked'        => 0
+        ]);
         return redirect('/admin')->with('message', 'System control has been updated');
     }
 }

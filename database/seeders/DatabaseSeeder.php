@@ -83,6 +83,7 @@ class DatabaseSeeder extends Seeder
         $control->lower_ph = 0;
         $control->upper_nutrisi = 0;
         $control->lower_nutrisi = 0;
+        $control->locked = false;
         $control->save();
     }
 }

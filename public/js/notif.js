@@ -111,3 +111,23 @@ $(function () {
     })
   })
 })
+
+$(function () {
+  $('#resetControl').on('click', function (e) {
+    const href = window.origin + $(this).attr('href');
+    e.preventDefault();
+    Swal.fire({
+      title: 'Reset Control?',
+      text: "The effect can be changed while reseting the control.",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, reset it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = href;
+      }
+    })
+  })
+})

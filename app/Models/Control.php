@@ -10,6 +10,6 @@ class Control extends Model
     use HasFactory;
 
     protected $fillable = [
-        'control', 'upper_level', 'lower_level', 'upper_ph', 'lower_ph', 'upper_nutrisi', 'lower_nutrisi'
+        'control', 'upper_level', 'lower_level', 'upper_ph', 'lower_ph', 'upper_nutrisi', 'lower_nutrisi', 'locked'
     ];
 }
