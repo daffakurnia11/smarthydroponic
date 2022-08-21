@@ -16,12 +16,12 @@ class CreateControlsTable extends Migration
         Schema::create('controls', function (Blueprint $table) {
             $table->id();
             $table->boolean('control');
-            $table->integer('upper_level');
-            $table->integer('lower_level');
-            $table->integer('upper_ph');
-            $table->integer('lower_ph');
-            $table->integer('upper_nutrisi');
-            $table->integer('lower_nutrisi');
+            $table->string('upper_level');
+            $table->string('lower_level');
+            $table->string('upper_ph');
+            $table->string('lower_ph');
+            $table->string('upper_nutrisi');
+            $table->string('lower_nutrisi');
             $table->timestamps();
         });
     }

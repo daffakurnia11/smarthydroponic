@@ -70,12 +70,12 @@ class AdminController extends Controller
     {
         $validated = $request->validate([
             'control'       => 'required|boolean',
-            'upper_level'   => 'required|integer',
-            'lower_level'   => 'required|integer',
-            'upper_ph'      => 'required|integer',
-            'lower_ph'      => 'required|integer',
-            'upper_nutrisi' => 'required|integer',
-            'lower_nutrisi' => 'required|integer',
+            'upper_level'   => 'required',
+            'lower_level'   => 'required',
+            'upper_ph'      => 'required',
+            'lower_ph'      => 'required',
+            'upper_nutrisi' => 'required',
+            'lower_nutrisi' => 'required',
         ]);
         $validated['locked'] = true;
 

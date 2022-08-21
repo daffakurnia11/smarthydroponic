@@ -169,7 +169,7 @@
                 <div class="mb-3">
                   <label for="upper_level" class="form-label">Upper Level</label>
                   <div class="input-group">
-                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('upper_level') is-invalid @enderror" id="upper_level" name="upper_level" placeholder="0" value="{{ $control->upper_level }}">
+                    <input @if($control->locked == 1) disabled @endif type="text" class="form-control @error('upper_level') is-invalid @enderror" id="upper_level" name="upper_level" placeholder="0" value="{{ $control->upper_level }}">
                     <span class="input-group-text" id="basic-addon2">cm</span>
                   </div>
                   @error('upper_level')
@@ -181,7 +181,7 @@
                 <div class="mb-3">
                   <label for="lower_level" class="form-label">Lower Level</label>
                   <div class="input-group">
-                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('lower_level') is-invalid @enderror" id="lower_level" name="lower_level" placeholder="0" value="{{ $control->lower_level }}">
+                    <input @if($control->locked == 1) disabled @endif type="text" class="form-control @error('lower_level') is-invalid @enderror" id="lower_level" name="lower_level" placeholder="0" value="{{ $control->lower_level }}">
                     <span class="input-group-text" id="basic-addon2">cm</span>
                   </div>
                   @error('lower_level')
@@ -202,7 +202,7 @@
                   <label for="upper_ph" class="form-label">Upper pH</label>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon2">pH</span>
-                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('upper_ph') is-invalid @enderror" id="upper_ph" name="upper_ph" placeholder="0" value="{{ $control->upper_ph }}">
+                    <input @if($control->locked == 1) disabled @endif type="text" class="form-control @error('upper_ph') is-invalid @enderror" id="upper_ph" name="upper_ph" placeholder="0" value="{{ $control->upper_ph }}">
                   </div>
                   @error('upper_ph')
                     <small class="text-danger">
@@ -214,7 +214,7 @@
                   <label for="lower_ph" class="form-label">Lower pH</label>
                   <div class="input-group">
                     <span class="input-group-text" id="basic-addon2">pH</span>
-                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('lower_ph') is-invalid @enderror" id="lower_ph" name="lower_ph" placeholder="0" value="{{ $control->lower_ph }}">
+                    <input @if($control->locked == 1) disabled @endif type="text" class="form-control @error('lower_ph') is-invalid @enderror" id="lower_ph" name="lower_ph" placeholder="0" value="{{ $control->lower_ph }}">
                   </div>
                   @error('lower_ph')
                     <div class="invalid-feedback">
@@ -233,7 +233,7 @@
                 <div class="mb-3">
                   <label for="upper_nutrisi" class="form-label">Upper Nutrition</label>
                   <div class="input-group">
-                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('upper_nutrisi') is-invalid @enderror" id="upper_nutrisi" name="upper_nutrisi" placeholder="0" value="{{ $control->upper_nutrisi }}">
+                    <input @if($control->locked == 1) disabled @endif type="text" class="form-control @error('upper_nutrisi') is-invalid @enderror" id="upper_nutrisi" name="upper_nutrisi" placeholder="0" value="{{ $control->upper_nutrisi }}">
                     <span class="input-group-text" id="basic-addon2">ppm</span>
                   </div>
                   @error('upper_nutrisi')
@@ -245,7 +245,7 @@
                 <div class="mb-3">
                   <label for="lower_nutrisi" class="form-label">Lower Nutrition</label>
                   <div class="input-group">
-                    <input @if($control->locked == 1) disabled @endif type="number" class="form-control @error('lower_nutrisi') is-invalid @enderror" id="lower_nutrisi" name="lower_nutrisi" placeholder="0" value="{{ $control->lower_nutrisi }}">
+                    <input @if($control->locked == 1) disabled @endif type="text" class="form-control @error('lower_nutrisi') is-invalid @enderror" id="lower_nutrisi" name="lower_nutrisi" placeholder="0" value="{{ $control->lower_nutrisi }}">
                     <span class="input-group-text" id="basic-addon2">ppm</span>
                   </div>
                   @error('lower_nutrisi')
